@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-final lightTheme = ThemeData.light().copyWith(
+final lightTheme = ThemeData(
+  brightness: Brightness.light,
+  fontFamily: 'OpenSans',
   scaffoldBackgroundColor: Colors.white,
   primaryColor: Colors.black,
   accentColor: Colors.lightBlue,
