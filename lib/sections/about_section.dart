@@ -21,6 +21,13 @@ class AboutSection extends StatelessWidget {
               width: isMobile ? 50.w : 30.w,
             ),
           ),
+          SizedBox(height: 0.75.w),
+          Text(
+            'Hi, I\'m Ankan 🤝',
+            style: TextStyle(
+              fontSize: isMobile ? 20.sp : 15.sp,
+            ),
+          ),
         ],
       ),
     );
