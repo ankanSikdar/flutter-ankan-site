@@ -31,22 +31,34 @@ class CustomAppBar extends StatelessWidget {
           : [
               TextButton(
                 onPressed: () {},
-                child: Text('About'),
+                child: Text(
+                  'About',
+                  style: TextStyle(fontSize: 8.sp),
+                ),
               ),
               SizedBox(width: 16.0),
               TextButton(
                 onPressed: () {},
-                child: Text('Projects'),
+                child: Text(
+                  'Projects',
+                  style: TextStyle(fontSize: 8.sp),
+                ),
               ),
               SizedBox(width: 16.0),
               TextButton(
                 onPressed: () {},
-                child: Text('Education'),
+                child: Text(
+                  'Education',
+                  style: TextStyle(fontSize: 8.sp),
+                ),
               ),
               SizedBox(width: 16.0),
               TextButton(
                 onPressed: () {},
-                child: Text('Contact'),
+                child: Text(
+                  'Contact',
+                  style: TextStyle(fontSize: 8.sp),
+                ),
               ),
               SizedBox(width: 16.0),
               IconButton(
