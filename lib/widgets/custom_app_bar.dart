@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({Key? key}) : super(key: key);
+  final void Function() onMenuTap;
+
+  const CustomAppBar({Key? key, required this.onMenuTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +18,9 @@ class CustomAppBar extends StatelessWidget {
         fit: BoxFit.fitHeight,
       ),
       leading: isMobile
-          ? Icon(
-              Icons.menu,
+          ? IconButton(
+              icon: Icon(Icons.menu),
+              onPressed: onMenuTap,
               color: Theme.of(context).iconTheme.color,
             )
           : null,
