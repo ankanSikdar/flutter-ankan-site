@@ -1,4 +1,5 @@
 import 'package:ankan_site/config/configs.dart';
+import 'package:ankan_site/sections/sections.dart';
 import 'package:ankan_site/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -32,6 +33,9 @@ class _HomeState extends State<Home> {
           CustomAppBar(
             onMenuTap: handleMenuTap,
           ),
+          SliverToBoxAdapter(
+            child: AboutSection(),
+          )
         ],
       ),
     );
