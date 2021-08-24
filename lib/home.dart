@@ -34,7 +34,15 @@ class _HomeState extends State<Home> {
             onMenuTap: handleMenuTap,
           ),
           SliverToBoxAdapter(
-            child: AboutSection(),
+            child: Column(
+              children: [
+                AboutSection(),
+                SizedBox(
+                  height: 20.w,
+                ),
+                FeaturedSection(),
+              ],
+            ),
           )
         ],
       ),
