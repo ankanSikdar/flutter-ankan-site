@@ -28,6 +28,41 @@ class AboutSection extends StatelessWidget {
               fontSize: isMobile ? 20.sp : 15.sp,
             ),
           ),
+          SizedBox(height: 0.5.h),
+          Text(
+            'Learning and Building Flutter Apps.',
+            style: TextStyle(
+              fontSize: isMobile ? 25.sp : 20.sp,
+            ),
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(height: 0.75.h),
+          Container(
+            width: isMobile ? 90.w : 70.w,
+            child: RichText(
+              text: TextSpan(
+                style: TextStyle(
+                  fontSize: isMobile ? 14.sp : 10.sp,
+                  fontFamily: 'OpenSans',
+                  color: Colors.black,
+                ),
+                children: [
+                  TextSpan(text: 'an '),
+                  TextSpan(
+                      text: 'App Developer',
+                      style: TextStyle(fontWeight: FontWeight.bold)),
+                  TextSpan(
+                      text:
+                          ' from Kolkata, WB, India. I specialize in building '),
+                  TextSpan(
+                      text: 'Flutter',
+                      style: TextStyle(fontWeight: FontWeight.bold)),
+                  TextSpan(text: ' Apps.')
+                ],
+              ),
+              textAlign: TextAlign.center,
+            ),
+          )
         ],
       ),
     );
