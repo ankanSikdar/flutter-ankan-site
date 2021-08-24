@@ -1,5 +1,7 @@
 import 'package:ankan_site/config/configs.dart';
+import 'package:ankan_site/home.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,44 +10,13 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Ankan Sikdar',
-      theme: lightTheme,
-      // darkTheme: darkTheme,
-      home: UnderDevelopment(),
-    );
-  }
-}
-
-class UnderDevelopment extends StatelessWidget {
-  const UnderDevelopment({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Image.asset(
-              'assets/images/work.png',
-              height: 200,
-              width: 200,
-              fit: BoxFit.fitWidth,
-            ),
-            SizedBox(height: 32.0),
-            Text(
-              'Website Under Development',
-              style: TextStyle(fontSize: 36.0),
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
+    return Sizer(
+      builder: (context, orientation, deviceType) => MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Ankan Sikdar',
+        theme: lightTheme,
+        // darkTheme: darkTheme,
+        home: Home(),
       ),
     );
   }
