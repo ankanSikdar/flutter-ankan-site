@@ -1,3 +1,4 @@
+import 'package:ankan_site/config/configs.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,9 +11,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Ankan Sikdar',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: lightTheme,
+      // darkTheme: darkTheme,
       home: UnderDevelopment(),
     );
   }
