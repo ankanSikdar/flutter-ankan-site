@@ -41,6 +41,10 @@ class _HomeState extends State<Home> {
                   height: 20.w,
                 ),
                 FeaturedSection(),
+                SizedBox(
+                  height: 20.w,
+                ),
+                EducationSection(),
               ],
             ),
           )
