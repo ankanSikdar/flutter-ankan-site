@@ -19,6 +19,7 @@ class EducationSection extends StatelessWidget {
     print('Width: ${SizerUtil.width}');
     final isMobile = SizerUtil.width <= mobileWidth;
     return Container(
+      width: isMobile ? 90.w : 200.w,
       margin: EdgeInsets.only(top: isMobile ? 3.h : 2.h),
       child: Column(
         children: [
@@ -71,7 +72,57 @@ class EducationSection extends StatelessWidget {
                       graduated: collegeGraduated,
                     ),
                   ],
+                ),
+          SizedBox(height: 5.w),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 1.w),
+            child: Text(
+              'Certifications',
+              style: TextStyle(
+                fontSize: isMobile ? 20.sp : 15.sp,
+              ),
+            ),
+          ),
+          SizedBox(height: 2.w),
+          isMobile
+              ? Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    MobCourse(
+                      image: 'assets/images/course1.png',
+                      title:
+                          'Front-End Web UI Frameworks and Tools: Bootstrap 4',
+                      subtitle: 'Coursera',
+                    ),
+                    SizedBox(height: 2.w),
+                    MobCourse(
+                      image: 'assets/images/course2.png',
+                      title: 'Front-End Web Development with React',
+                      subtitle: 'Coursera',
+                    ),
+                    SizedBox(height: 2.w),
+                    MobCourse(
+                      image: 'assets/images/course3.png',
+                      title:
+                          'Multiplatform Mobile App Development with ReactNative',
+                      subtitle: 'Coursera',
+                    ),
+                    SizedBox(height: 2.w),
+                    MobCourse(
+                      image: 'assets/images/course4.png',
+                      title:
+                          'Server-side Development with NodeJS, Express and MongoDB',
+                      subtitle: 'Coursera',
+                    ),
+                    SizedBox(height: 2.w),
+                    MobCourse(
+                      image: 'assets/images/responsive.png',
+                      title: 'Responsive Web Design',
+                      subtitle: 'FreeCodeCamp',
+                    ),
+                  ],
                 )
+              : Column(),
         ],
       ),
     );
@@ -106,14 +157,17 @@ class MobSchool extends StatelessWidget {
         Text(
           title,
           style: TextStyle(fontSize: 15.sp),
+          textAlign: TextAlign.center,
         ),
         Text(
           subtitle,
           style: TextStyle(fontSize: 12.sp),
+          textAlign: TextAlign.center,
         ),
         Text(
           graduated,
           style: TextStyle(fontSize: 12.sp),
+          textAlign: TextAlign.center,
         ),
       ],
     );
@@ -163,6 +217,48 @@ class BigSchool extends StatelessWidget {
               style: TextStyle(fontSize: 8.sp),
             ),
           ],
+        )
+      ],
+    );
+  }
+}
+
+class MobCourse extends StatelessWidget {
+  final String image;
+  final String title;
+  final String subtitle;
+  const MobCourse(
+      {Key? key,
+      required this.image,
+      required this.title,
+      required this.subtitle})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Image.asset(
+          image,
+          width: 25.w,
+          fit: BoxFit.fitWidth,
+        ),
+        SizedBox(width: 2.w),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: TextStyle(fontSize: 13.sp),
+                overflow: TextOverflow.clip,
+              ),
+              Text(
+                subtitle,
+                style: TextStyle(fontSize: 12.sp),
+              ),
+            ],
+          ),
         )
       ],
     );
