@@ -11,14 +11,11 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isMobile = SizerUtil.width <= mobileWidth;
-    return Padding(
-      padding: EdgeInsets.only(left: isMobile ? 5.w : 10.w),
-      child: Text(
-        text,
-        style: TextStyle(
-          fontSize: isMobile ? 20.sp : 15.sp,
-          fontWeight: FontWeight.bold,
-        ),
+    return Text(
+      text,
+      style: TextStyle(
+        fontSize: isMobile ? 25.sp : 20.sp,
+        fontWeight: FontWeight.bold,
       ),
     );
   }
