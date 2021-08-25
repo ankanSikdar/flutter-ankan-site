@@ -19,6 +19,16 @@ final lightTheme = ThemeData(
       overlayColor: MaterialStateProperty.all(Colors.white),
     ),
   ),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ButtonStyle(
+      backgroundColor: MaterialStateProperty.all(Colors.white),
+      foregroundColor: MaterialStateProperty.all(Colors.black),
+      shape: MaterialStateProperty.all(
+        RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(15.0))),
+      ),
+    ),
+  ),
   iconTheme: IconThemeData(
     color: Colors.black,
   ),
