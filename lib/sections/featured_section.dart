@@ -1,6 +1,7 @@
 import 'package:ankan_site/config/configs.dart';
 import 'package:ankan_site/widgets/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sizer/sizer.dart';
 
 class FeaturedSection extends StatelessWidget {
@@ -86,7 +87,50 @@ class FeaturedSection extends StatelessWidget {
               // textAlign: TextAlign.,
             ),
           ),
-          SizedBox(height: 1.w),
+          SizedBox(height: 2.w),
+          Row(
+            mainAxisAlignment: isMobile
+                ? MainAxisAlignment.spaceBetween
+                : MainAxisAlignment.spaceAround,
+            children: [
+              ElevatedButton.icon(
+                style: ButtonStyle(
+                  padding: MaterialStateProperty.all(
+                    EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.w),
+                  ),
+                ),
+                onPressed: () {},
+                icon: FaIcon(
+                  FontAwesomeIcons.github,
+                  size: 22.sp,
+                ),
+                label: Text(
+                  'GitHub',
+                  style: TextStyle(
+                    fontSize: isMobile ? 14.sp : 12.sp,
+                  ),
+                ),
+              ),
+              ElevatedButton.icon(
+                style: ButtonStyle(
+                  padding: MaterialStateProperty.all(
+                    EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.w),
+                  ),
+                ),
+                onPressed: () {},
+                icon: FaIcon(
+                  FontAwesomeIcons.googlePlay,
+                  size: 20.sp,
+                ),
+                label: Text(
+                  'Play Store',
+                  style: TextStyle(
+                    fontSize: isMobile ? 14.sp : 12.sp,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
