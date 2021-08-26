@@ -91,7 +91,7 @@ class FeaturedSection extends StatelessWidget {
           Row(
             mainAxisAlignment: isMobile
                 ? MainAxisAlignment.spaceBetween
-                : MainAxisAlignment.spaceAround,
+                : MainAxisAlignment.spaceEvenly,
             children: [
               ElevatedButton.icon(
                 style: ButtonStyle(
@@ -103,12 +103,12 @@ class FeaturedSection extends StatelessWidget {
                 onPressed: () {},
                 icon: FaIcon(
                   FontAwesomeIcons.github,
-                  size: 22.sp,
+                  size: isMobile ? 22.sp : 17.sp,
                 ),
                 label: Text(
                   'GitHub',
                   style: TextStyle(
-                    fontSize: isMobile ? 14.sp : 12.sp,
+                    fontSize: isMobile ? 14.sp : 8.sp,
                   ),
                 ),
               ),
@@ -122,12 +122,12 @@ class FeaturedSection extends StatelessWidget {
                 onPressed: () {},
                 icon: FaIcon(
                   FontAwesomeIcons.googlePlay,
-                  size: 20.sp,
+                  size: isMobile ? 20.sp : 18.sp,
                 ),
                 label: Text(
                   'Play Store',
                   style: TextStyle(
-                    fontSize: isMobile ? 14.sp : 12.sp,
+                    fontSize: isMobile ? 14.sp : 8.sp,
                   ),
                 ),
               ),
