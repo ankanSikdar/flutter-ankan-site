@@ -41,17 +41,20 @@ class _HomeState extends State<Home> {
                   height: isMobile ? 20.w : 0,
                 ),
                 FeaturedSection(),
+                SizedBox(
+                  height: isMobile ? 20.w : 5.w,
+                ),
                 ProjectsSection(),
                 SizedBox(
-                  height: 20.w,
+                  height: isMobile ? 20.w : 5.w,
                 ),
                 EducationSection(),
                 SizedBox(
-                  height: 20.w,
+                  height: isMobile ? 20.w : 5.w,
                 ),
                 ContactSection(),
                 SizedBox(
-                  height: 20.w,
+                  height: isMobile ? 20.w : 5.w,
                 ),
                 FooterSection(),
               ],
