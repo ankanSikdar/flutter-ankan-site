@@ -1,5 +1,6 @@
 import 'package:ankan_site/config/configs.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sizer/sizer.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -12,63 +13,21 @@ class CustomAppBar extends StatelessWidget {
     final isMobile = SizerUtil.width <= mobileWidth;
     return SliverAppBar(
       centerTitle: isMobile ? true : false,
+      pinned: true,
       title: Image.asset(
         'assets/images/logo_light.png',
         height: isMobile ? 10.h : 5.h,
         fit: BoxFit.fitHeight,
       ),
-      leading: isMobile
-          ? IconButton(
-              icon: Icon(Icons.menu),
-              onPressed: onMenuTap,
-              color: Theme.of(context).iconTheme.color,
-            )
-          : null,
-      actions: isMobile
-          ? [
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.dark_mode),
-              ),
-            ]
-          : [
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  'About',
-                  style: TextStyle(fontSize: 8.sp),
-                ),
-              ),
-              SizedBox(width: 16.0),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  'Projects',
-                  style: TextStyle(fontSize: 8.sp),
-                ),
-              ),
-              SizedBox(width: 16.0),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  'Education',
-                  style: TextStyle(fontSize: 8.sp),
-                ),
-              ),
-              SizedBox(width: 16.0),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  'Contact',
-                  style: TextStyle(fontSize: 8.sp),
-                ),
-              ),
-              SizedBox(width: 16.0),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.dark_mode),
-              ),
-            ],
+      actions: [
+        Container(
+          margin: EdgeInsets.only(right: isMobile ? 0 : 5.w),
+          child: IconButton(
+            onPressed: () {},
+            icon: FaIcon(FontAwesomeIcons.solidLightbulb),
+          ),
+        ),
+      ],
     );
   }
 }
