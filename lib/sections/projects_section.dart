@@ -3,6 +3,7 @@ import 'package:ankan_site/widgets/widgets.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class ProjectsSection extends StatefulWidget {
   ProjectsSection({Key? key}) : super(key: key);
@@ -87,7 +88,17 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                 ),
               ),
               isMobile
-                  ? Container()
+                  ? Positioned(
+                      bottom: 0.0,
+                      child: AnimatedSmoothIndicator(
+                        activeIndex: _current,
+                        count: 5,
+                        effect: WormEffect(
+                          activeDotColor: Colors.blueGrey.shade900,
+                          dotColor: Colors.blueGrey.shade200,
+                        ),
+                      ),
+                    )
                   : Positioned(
                       bottom: 1.0,
                       child: Container(

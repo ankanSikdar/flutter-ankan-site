@@ -27,6 +27,7 @@ dependencies:
     sdk: flutter
   font_awesome_flutter: ^9.1.0
   sizer: ^2.0.13
+  smooth_page_indicator: ^0.3.0-nullsafety.0
 
 dev_dependencies:
   flutter_test:
