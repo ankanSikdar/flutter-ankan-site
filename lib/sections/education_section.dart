@@ -148,18 +148,14 @@ class EducationSection extends StatelessWidget {
                     ),
                     SizedBox(height: 2.w),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Container(
-                          width: 70.w,
+                        Expanded(
                           child: BigCourse(
                             image: 'assets/images/responsive.png',
                             title: 'Responsive Web Design',
                             subtitle: 'FreeCodeCamp',
                           ),
-                        ),
-                        Container(
-                          width: 70.w,
                         ),
                       ],
                     ),
@@ -194,16 +190,14 @@ class BigCourseRow extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        Container(
-          width: 70.w,
+        Expanded(
           child: BigCourse(
             image: imageLeft,
             title: titleLeft,
             subtitle: subtitleLeft,
           ),
         ),
-        Container(
-          width: 70.w,
+        Expanded(
           child: BigCourse(
             image: imageRight,
             title: titleRight,
