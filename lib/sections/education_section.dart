@@ -19,8 +19,11 @@ class EducationSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final isMobile = SizerUtil.width <= mobileWidth;
     return Container(
-      width: isMobile ? 90.w : 200.w,
-      margin: EdgeInsets.only(top: isMobile ? 3.h : 2.h),
+      margin: EdgeInsets.only(
+        top: isMobile ? 3.h : 2.h,
+        left: isMobile ? 5.w : 10.w,
+        right: isMobile ? 5.w : 10.w,
+      ),
       child: Column(
         children: [
           Header(text: 'Education & Courses'),
