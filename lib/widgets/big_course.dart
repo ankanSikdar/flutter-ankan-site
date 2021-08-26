@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-class MobCourse extends StatelessWidget {
+class BigCourse extends StatelessWidget {
   final String image;
   final String title;
   final String subtitle;
-  const MobCourse(
+
+  const BigCourse(
       {Key? key,
       required this.image,
       required this.title,
@@ -18,7 +19,7 @@ class MobCourse extends StatelessWidget {
       children: [
         Image.asset(
           image,
-          width: 25.w,
+          width: 20.w,
           fit: BoxFit.fitWidth,
         ),
         SizedBox(width: 2.w),
@@ -28,12 +29,12 @@ class MobCourse extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: TextStyle(fontSize: 13.sp),
+                style: TextStyle(fontSize: 8.sp),
                 overflow: TextOverflow.clip,
               ),
               Text(
                 subtitle,
-                style: TextStyle(fontSize: 12.sp),
+                style: TextStyle(fontSize: 7.sp),
               ),
             ],
           ),
