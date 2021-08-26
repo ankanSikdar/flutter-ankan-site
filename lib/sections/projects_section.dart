@@ -32,11 +32,17 @@ class _ProjectsSectionState extends State<ProjectsSection> {
   List<Widget> generateImageTiles(bool isMobile) {
     return images
         .map(
-          (element) => ClipRRect(
-            borderRadius: BorderRadius.circular(isMobile ? 10.0 : 20.0),
-            child: Image.asset(
-              element,
-              fit: BoxFit.cover,
+          (element) => Card(
+            elevation: 3.0,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(isMobile ? 10.0 : 20.0),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(isMobile ? 10.0 : 20.0),
+              child: Image.asset(
+                element,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
         )

@@ -19,12 +19,18 @@ class FeaturedSection extends StatelessWidget {
           SizedBox(
             height: 5.w,
           ),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(isMobile ? 10.0 : 20.0),
-            child: Image.asset(
-              'assets/images/featured_project.png',
-              width: isMobile ? 90.w : 120.w,
-              fit: BoxFit.fitWidth,
+          Card(
+            elevation: 3.0,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(isMobile ? 10.0 : 20.0),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(isMobile ? 10.0 : 20.0),
+              child: Image.asset(
+                'assets/images/featured_project.png',
+                width: isMobile ? 90.w : 120.w,
+                fit: BoxFit.fitWidth,
+              ),
             ),
           ),
           SizedBox(height: 3.w),
