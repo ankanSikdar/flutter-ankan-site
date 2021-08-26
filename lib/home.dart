@@ -38,7 +38,7 @@ class _HomeState extends State<Home> {
               children: [
                 AboutSection(),
                 SizedBox(
-                  height: 20.w,
+                  height: isMobile ? 20.w : 0,
                 ),
                 FeaturedSection(),
                 ProjectsSection(),

@@ -12,7 +12,6 @@ class FeaturedSection extends StatelessWidget {
     final isMobile = SizerUtil.width <= mobileWidth;
     return Container(
       margin: EdgeInsets.only(
-        top: isMobile ? 3.h : 2.h,
         left: isMobile ? 5.w : 10.w,
         right: isMobile ? 5.w : 10.w,
       ),
@@ -20,7 +19,7 @@ class FeaturedSection extends StatelessWidget {
         children: [
           Header(text: 'Featured Project'),
           SizedBox(
-            height: 5.w,
+            height: isMobile ? 5.w : 3.w,
           ),
           Card(
             elevation: 3.0,
@@ -36,7 +35,7 @@ class FeaturedSection extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 3.w),
+          SizedBox(height: isMobile ? 3.w : 5.w),
           Row(
             children: [
               Expanded(
@@ -99,7 +98,7 @@ class FeaturedSection extends StatelessWidget {
             textAlign: TextAlign.center,
             // textAlign: TextAlign.,
           ),
-          SizedBox(height: 2.w),
+          SizedBox(height: isMobile ? 4.w : 2.w),
           Row(
             mainAxisAlignment: isMobile
                 ? MainAxisAlignment.spaceBetween
@@ -115,7 +114,7 @@ class FeaturedSection extends StatelessWidget {
                 onPressed: () {},
                 icon: FaIcon(
                   FontAwesomeIcons.github,
-                  size: isMobile ? 22.sp : 17.sp,
+                  size: isMobile ? 20.sp : 18.sp,
                 ),
                 label: Text(
                   'GitHub',
