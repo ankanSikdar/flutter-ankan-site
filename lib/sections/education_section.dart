@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'dart:js' as js;
 
 import 'package:ankan_site/config/configs.dart';
 import 'package:ankan_site/widgets/widgets.dart';
@@ -14,6 +15,10 @@ const String collegeGraduated = 'Graduated in 2021';
 
 class EducationSection extends StatelessWidget {
   const EducationSection({Key? key}) : super(key: key);
+
+  void handleTap(String url) {
+    js.context.callMethod('open', [url]);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +53,9 @@ class EducationSection extends StatelessWidget {
                       title: schoolTitle,
                       subtitle: schoolSubtitle,
                       graduated: schoolGraduated,
+                      onTap: () {
+                        handleTap('http://www.sudhirmemorialinstitute.com/');
+                      },
                     ),
                     SizedBox(height: 2.w),
                     MobSchool(
@@ -55,6 +63,9 @@ class EducationSection extends StatelessWidget {
                       title: collegeTitle,
                       subtitle: collegeSubtitle,
                       graduated: collegeGraduated,
+                      onTap: () {
+                        handleTap('https://heritageit.edu/');
+                      },
                     ),
                   ],
                 )
@@ -67,6 +78,9 @@ class EducationSection extends StatelessWidget {
                         title: schoolTitle,
                         subtitle: schoolSubtitle,
                         graduated: schoolGraduated,
+                        onTap: () {
+                          handleTap('http://www.sudhirmemorialinstitute.com/');
+                        },
                       ),
                     ),
                     SizedBox(height: 2.w),
@@ -76,6 +90,9 @@ class EducationSection extends StatelessWidget {
                         title: collegeTitle,
                         subtitle: collegeSubtitle,
                         graduated: collegeGraduated,
+                        onTap: () {
+                          handleTap('https://heritageit.edu/');
+                        },
                       ),
                     ),
                   ],

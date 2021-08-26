@@ -6,6 +6,7 @@ class BigSchool extends StatelessWidget {
   final String title;
   final String subtitle;
   final String graduated;
+  final void Function() onTap;
 
   const BigSchool({
     Key? key,
@@ -13,6 +14,7 @@ class BigSchool extends StatelessWidget {
     required this.title,
     required this.subtitle,
     required this.graduated,
+    required this.onTap,
   }) : super(key: key);
 
   @override
@@ -30,9 +32,14 @@ class BigSchool extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 5.w),
-              Text(
-                title,
-                style: TextStyle(fontSize: 10.sp),
+              InkWell(
+                onTap: onTap,
+                splashColor: Colors.transparent,
+                child: Text(
+                  title,
+                  style: TextStyle(
+                      fontSize: 10.sp, decoration: TextDecoration.underline),
+                ),
               ),
               Text(
                 subtitle,

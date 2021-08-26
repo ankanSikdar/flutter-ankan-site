@@ -6,6 +6,7 @@ class MobSchool extends StatelessWidget {
   final String title;
   final String subtitle;
   final String graduated;
+  final void Function() onTap;
 
   const MobSchool({
     Key? key,
@@ -13,6 +14,7 @@ class MobSchool extends StatelessWidget {
     required this.title,
     required this.subtitle,
     required this.graduated,
+    required this.onTap,
   }) : super(key: key);
 
   @override
@@ -26,10 +28,15 @@ class MobSchool extends StatelessWidget {
           fit: BoxFit.fitHeight,
         ),
         SizedBox(height: 1.w),
-        Text(
-          title,
-          style: TextStyle(fontSize: 15.sp),
-          textAlign: TextAlign.center,
+        InkWell(
+          onTap: onTap,
+          splashColor: Colors.transparent,
+          child: Text(
+            title,
+            style: TextStyle(
+                fontSize: 15.sp, decoration: TextDecoration.underline),
+            textAlign: TextAlign.center,
+          ),
         ),
         Text(
           subtitle,
