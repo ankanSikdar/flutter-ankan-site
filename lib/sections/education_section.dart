@@ -17,7 +17,6 @@ class EducationSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('Width: ${SizerUtil.width}');
     final isMobile = SizerUtil.width <= mobileWidth;
     return Container(
       width: isMobile ? 90.w : 200.w,
@@ -59,18 +58,22 @@ class EducationSection extends StatelessWidget {
               : Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    BigSchool(
-                      image: 'assets/images/school.png',
-                      title: schoolTitle,
-                      subtitle: schoolSubtitle,
-                      graduated: schoolGraduated,
+                    Expanded(
+                      child: BigSchool(
+                        image: 'assets/images/school.png',
+                        title: schoolTitle,
+                        subtitle: schoolSubtitle,
+                        graduated: schoolGraduated,
+                      ),
                     ),
                     SizedBox(height: 2.w),
-                    BigSchool(
-                      image: 'assets/images/college.png',
-                      title: collegeTitle,
-                      subtitle: collegeSubtitle,
-                      graduated: collegeGraduated,
+                    Expanded(
+                      child: BigSchool(
+                        image: 'assets/images/college.png',
+                        title: collegeTitle,
+                        subtitle: collegeSubtitle,
+                        graduated: collegeGraduated,
+                      ),
                     ),
                   ],
                 ),
