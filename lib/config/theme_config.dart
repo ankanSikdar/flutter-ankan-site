@@ -21,8 +21,7 @@ final lightTheme = ThemeData(
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(
-      backgroundColor: MaterialStateProperty.all(Colors.white),
-      foregroundColor: MaterialStateProperty.all(Colors.black),
+      foregroundColor: MaterialStateProperty.all(Colors.white),
       shape: MaterialStateProperty.all(
         RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(15.0))),

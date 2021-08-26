@@ -200,7 +200,6 @@ class LinkButton extends StatelessWidget {
             EdgeInsets.all(4.w),
           ),
           backgroundColor: MaterialStateProperty.all(color),
-          foregroundColor: MaterialStateProperty.all(Colors.white),
         ),
         onPressed: onTap,
         icon: FaIcon(
@@ -241,7 +240,6 @@ class PCLinkButton extends StatelessWidget {
         ),
         minimumSize: MaterialStateProperty.all(Size(35.w, 2.w)),
         backgroundColor: MaterialStateProperty.all(color),
-        foregroundColor: MaterialStateProperty.all(Colors.white),
       ),
       onPressed: onTap,
       icon: FaIcon(

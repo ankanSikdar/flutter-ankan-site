@@ -98,6 +98,7 @@ class FeaturedSection extends StatelessWidget {
                   padding: MaterialStateProperty.all(
                     EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.w),
                   ),
+                  backgroundColor: MaterialStateProperty.all(Color(0xff333333)),
                 ),
                 onPressed: () {},
                 icon: FaIcon(
@@ -116,6 +117,7 @@ class FeaturedSection extends StatelessWidget {
                   padding: MaterialStateProperty.all(
                     EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.w),
                   ),
+                  backgroundColor: MaterialStateProperty.all(Color(0xff78C257)),
                 ),
                 onPressed: () {},
                 icon: FaIcon(
