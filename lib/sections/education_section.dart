@@ -1,7 +1,8 @@
-import 'package:ankan_site/config/configs.dart';
-import 'package:ankan_site/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+
+import 'package:ankan_site/config/configs.dart';
+import 'package:ankan_site/widgets/widgets.dart';
 
 const String schoolTitle = 'SUDHIR MEMORIAL INSTITUTE';
 const String schoolSubtitle = 'CBSE, 10 & 10+2';
@@ -122,50 +123,93 @@ class EducationSection extends StatelessWidget {
                     ),
                   ],
                 )
-              : Column(),
+              : Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    BigCourseRow(
+                      imageLeft: 'assets/images/course1.png',
+                      imageRight: 'assets/images/course2.png',
+                      titleLeft:
+                          'Front-End Web UI Frameworks and Tools: Bootstrap 4',
+                      titleRight: 'Front-End Web Development with React',
+                      subtitleLeft: 'Coursera',
+                      subtitleRight: 'Coursera',
+                    ),
+                    SizedBox(height: 2.w),
+                    BigCourseRow(
+                      imageLeft: 'assets/images/course3.png',
+                      imageRight: 'assets/images/course4.png',
+                      titleLeft:
+                          'Multiplatform Mobile App Development with React Native',
+                      titleRight:
+                          'Server-side Development with NodeJS, Express and MongoDB',
+                      subtitleLeft: 'Coursera',
+                      subtitleRight: 'Coursera',
+                    ),
+                    SizedBox(height: 2.w),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Container(
+                          width: 70.w,
+                          child: BigCourse(
+                            image: 'assets/images/responsive.png',
+                            title: 'Responsive Web Design',
+                            subtitle: 'FreeCodeCamp',
+                          ),
+                        ),
+                        Container(
+                          width: 70.w,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
         ],
       ),
     );
   }
 }
 
-class MobCourse extends StatelessWidget {
-  final String image;
-  final String title;
-  final String subtitle;
-  const MobCourse(
-      {Key? key,
-      required this.image,
-      required this.title,
-      required this.subtitle})
-      : super(key: key);
+class BigCourseRow extends StatelessWidget {
+  final String imageLeft;
+  final String imageRight;
+  final String titleLeft;
+  final String titleRight;
+  final String subtitleLeft;
+  final String subtitleRight;
+
+  const BigCourseRow({
+    Key? key,
+    required this.imageLeft,
+    required this.imageRight,
+    required this.titleLeft,
+    required this.titleRight,
+    required this.subtitleLeft,
+    required this.subtitleRight,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        Image.asset(
-          image,
-          width: 25.w,
-          fit: BoxFit.fitWidth,
-        ),
-        SizedBox(width: 2.w),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                style: TextStyle(fontSize: 13.sp),
-                overflow: TextOverflow.clip,
-              ),
-              Text(
-                subtitle,
-                style: TextStyle(fontSize: 12.sp),
-              ),
-            ],
+        Container(
+          width: 70.w,
+          child: BigCourse(
+            image: imageLeft,
+            title: titleLeft,
+            subtitle: subtitleLeft,
           ),
-        )
+        ),
+        Container(
+          width: 70.w,
+          child: BigCourse(
+            image: imageRight,
+            title: titleRight,
+            subtitle: subtitleRight,
+          ),
+        ),
       ],
     );
   }
