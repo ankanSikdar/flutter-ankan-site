@@ -49,6 +49,10 @@ class _HomeState extends State<Home> {
                   height: 20.w,
                 ),
                 ContactSection(),
+                SizedBox(
+                  height: 20.w,
+                ),
+                FooterSection(),
               ],
             ),
           )

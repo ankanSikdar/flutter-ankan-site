@@ -6,6 +6,7 @@ final lightTheme = ThemeData(
   scaffoldBackgroundColor: Colors.white,
   primaryColor: Colors.black,
   accentColor: Colors.lightBlue,
+  hintColor: Colors.grey[100],
   textButtonTheme: TextButtonThemeData(
     style: ButtonStyle(
       padding: MaterialStateProperty.all(
