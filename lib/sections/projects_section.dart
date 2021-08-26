@@ -60,89 +60,102 @@ class _ProjectsSectionState extends State<ProjectsSection> {
           SizedBox(
             height: 5.w,
           ),
-          CarouselSlider(
-            items: imageSliders,
-            options: CarouselOptions(
-                enlargeCenterPage: true,
-                aspectRatio: isMobile ? 18 / 8 : 3,
-                autoPlay: true,
-                onPageChanged: (index, reason) {
-                  setState(() {
-                    _current = index;
-                    for (int i = 0; i < imageSliders.length; i++) {
-                      if (i == index) {
-                        _isSelected[i] = true;
-                      } else {
-                        _isSelected[i] = false;
-                      }
-                    }
-                  });
-                }),
-            carouselController: _controller,
-          ),
-          if (!isMobile)
-            Container(
-              width: 100.w,
-              child: Card(
-                elevation: 5.0,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    for (int i = 0; i < places.length; i++)
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          InkWell(
-                            splashColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            onHover: (value) {
-                              setState(() {
-                                value
-                                    ? _isHovering[i] = true
-                                    : _isHovering[i] = false;
-                              });
-                            },
-                            onTap: () {
-                              _controller.animateToPage(i);
-                            },
-                            child: Padding(
-                              padding: EdgeInsets.only(top: 2.w, bottom: 2.w),
-                              child: Text(
-                                places[i],
-                                style: TextStyle(
-                                  color: _isHovering[i]
-                                      ? Colors.blueGrey[900]
-                                      : Colors.blueGrey,
-                                ),
-                              ),
-                            ),
-                          ),
-                          Visibility(
-                            maintainSize: true,
-                            maintainAnimation: true,
-                            maintainState: true,
-                            visible: _isSelected[i],
-                            child: AnimatedOpacity(
-                              duration: Duration(milliseconds: 400),
-                              opacity: _isSelected[i] ? 1 : 0,
-                              child: Container(
-                                height: 5,
-                                decoration: BoxDecoration(
-                                  color: Colors.blueGrey,
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(10),
-                                  ),
-                                ),
-                                width: 15.w,
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                  ],
+          Stack(
+            alignment: Alignment.center,
+            children: [
+              Padding(
+                padding: EdgeInsets.only(bottom: 7.w),
+                child: CarouselSlider(
+                  items: imageSliders,
+                  options: CarouselOptions(
+                      enlargeCenterPage: true,
+                      aspectRatio: isMobile ? 18 / 8 : 3,
+                      autoPlay: true,
+                      onPageChanged: (index, reason) {
+                        setState(() {
+                          _current = index;
+                          for (int i = 0; i < imageSliders.length; i++) {
+                            if (i == index) {
+                              _isSelected[i] = true;
+                            } else {
+                              _isSelected[i] = false;
+                            }
+                          }
+                        });
+                      }),
+                  carouselController: _controller,
                 ),
               ),
-            ),
+              isMobile
+                  ? Container()
+                  : Positioned(
+                      bottom: 1.0,
+                      child: Container(
+                        width: 100.w,
+                        child: Card(
+                          elevation: 5.0,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              for (int i = 0; i < places.length; i++)
+                                Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    InkWell(
+                                      splashColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      onHover: (value) {
+                                        setState(() {
+                                          value
+                                              ? _isHovering[i] = true
+                                              : _isHovering[i] = false;
+                                        });
+                                      },
+                                      onTap: () {
+                                        _controller.animateToPage(i);
+                                      },
+                                      child: Padding(
+                                        padding: EdgeInsets.only(
+                                            top: 2.w, bottom: 2.w),
+                                        child: Text(
+                                          places[i],
+                                          style: TextStyle(
+                                            color: _isHovering[i]
+                                                ? Colors.blueGrey[900]
+                                                : Colors.blueGrey,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Visibility(
+                                      maintainSize: true,
+                                      maintainAnimation: true,
+                                      maintainState: true,
+                                      visible: _isSelected[i],
+                                      child: AnimatedOpacity(
+                                        duration: Duration(milliseconds: 400),
+                                        opacity: _isSelected[i] ? 1 : 0,
+                                        child: Container(
+                                          height: 5,
+                                          decoration: BoxDecoration(
+                                            color: Colors.blueGrey,
+                                            borderRadius: BorderRadius.all(
+                                              Radius.circular(10),
+                                            ),
+                                          ),
+                                          width: 15.w,
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+            ],
+          ),
         ],
       ),
     );
