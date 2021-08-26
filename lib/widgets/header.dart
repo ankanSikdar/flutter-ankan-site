@@ -17,6 +17,7 @@ class Header extends StatelessWidget {
         fontSize: isMobile ? 25.sp : 20.sp,
         fontWeight: FontWeight.bold,
       ),
+      textAlign: TextAlign.center,
     );
   }
 }

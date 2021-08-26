@@ -15,6 +15,7 @@ class ContactSection extends StatelessWidget {
       width: isMobile ? 90.w : 200.w,
       margin: EdgeInsets.only(top: isMobile ? 3.h : 2.h),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Header(text: 'Connect With Me'),
           SizedBox(
