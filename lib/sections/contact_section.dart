@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sizer/sizer.dart';
+import 'dart:js' as js;
 
 import 'package:ankan_site/config/configs.dart';
 import 'package:ankan_site/widgets/widgets.dart';
 
 class ContactSection extends StatelessWidget {
   const ContactSection({Key? key}) : super(key: key);
+
+  void handleTap(String url) {
+    js.context.callMethod('open', [url]);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,14 +45,19 @@ class ContactSection extends StatelessWidget {
                           icon: FontAwesomeIcons.linkedin,
                           color: Color(0XFF0077b5),
                           title: 'LinkedIn',
-                          onTap: () {},
+                          onTap: () {
+                            handleTap(
+                                'https://www.linkedin.com/in/ankansikdar/');
+                          },
                         ),
                         SizedBox(width: 4.w),
                         LinkButton(
                           icon: FontAwesomeIcons.github,
                           color: Color(0xff333333),
                           title: 'GitHub',
-                          onTap: () {},
+                          onTap: () {
+                            handleTap('https://github.com/ankanSikdar');
+                          },
                         )
                       ],
                     ),
@@ -59,14 +69,19 @@ class ContactSection extends StatelessWidget {
                           icon: FontAwesomeIcons.instagram,
                           color: Color(0XFF833ab4),
                           title: 'Instagram',
-                          onTap: () {},
+                          onTap: () {
+                            handleTap(
+                                'https://www.instagram.com/ankan_sikdar/');
+                          },
                         ),
                         SizedBox(width: 4.w),
                         LinkButton(
                           icon: FontAwesomeIcons.twitter,
                           color: Color(0xff1da1f2),
                           title: 'Twitter',
-                          onTap: () {},
+                          onTap: () {
+                            handleTap('https://twitter.com/ankan_sikdar');
+                          },
                         )
                       ],
                     ),
@@ -78,14 +93,18 @@ class ContactSection extends StatelessWidget {
                           icon: FontAwesomeIcons.facebook,
                           color: Color(0XFF4267B2),
                           title: 'Facebook',
-                          onTap: () {},
+                          onTap: () {
+                            handleTap('https://www.facebook.com/ankanSikdar/');
+                          },
                         ),
                         SizedBox(width: 4.w),
                         LinkButton(
                           icon: FontAwesomeIcons.solidEnvelope,
                           color: Color(0xffdd4b39),
                           title: 'Email',
-                          onTap: () {},
+                          onTap: () {
+                            handleTap('mailto:contact@ankan.dev');
+                          },
                         )
                       ],
                     ),
@@ -97,14 +116,19 @@ class ContactSection extends StatelessWidget {
                           icon: FontAwesomeIcons.reddit,
                           color: Color(0xffff4500),
                           title: 'Reddit',
-                          onTap: () {},
+                          onTap: () {
+                            handleTap('https://www.reddit.com/user/Chrome597');
+                          },
                         ),
                         SizedBox(width: 4.w),
                         LinkButton(
                           icon: FontAwesomeIcons.googlePlay,
                           color: Color(0xff78C257),
                           title: 'Play Store',
-                          onTap: () {},
+                          onTap: () {
+                            handleTap(
+                                'https://play.google.com/store/apps/dev?id=6059531150910740578');
+                          },
                         )
                       ],
                     ),
@@ -119,26 +143,36 @@ class ContactSection extends StatelessWidget {
                             icon: FontAwesomeIcons.linkedin,
                             color: Color(0XFF0077b5),
                             title: 'LinkedIn',
-                            onTap: () {}),
+                            onTap: () {
+                              handleTap(
+                                  'https://www.linkedin.com/in/ankansikdar/');
+                            }),
                         SizedBox(width: 2.w),
                         PCLinkButton(
                             icon: FontAwesomeIcons.github,
                             color: Color(0xff333333),
                             title: 'GitHub',
-                            onTap: () {}),
+                            onTap: () {
+                              handleTap('https://github.com/ankanSikdar');
+                            }),
                         SizedBox(width: 2.w),
                         PCLinkButton(
                           icon: FontAwesomeIcons.twitter,
                           color: Color(0xff1da1f2),
                           title: 'Twitter',
-                          onTap: () {},
+                          onTap: () {
+                            handleTap('https://twitter.com/ankan_sikdar');
+                          },
                         ),
                         SizedBox(width: 2.w),
                         PCLinkButton(
                           icon: FontAwesomeIcons.instagram,
                           color: Color(0XFF833ab4),
                           title: 'Instagram',
-                          onTap: () {},
+                          onTap: () {
+                            handleTap(
+                                'https://www.instagram.com/ankan_sikdar/');
+                          },
                         ),
                       ],
                     ),
@@ -150,26 +184,36 @@ class ContactSection extends StatelessWidget {
                             icon: FontAwesomeIcons.facebook,
                             color: Color(0XFF4267B2),
                             title: 'Facebook',
-                            onTap: () {}),
+                            onTap: () {
+                              handleTap(
+                                  'https://www.facebook.com/ankanSikdar/');
+                            }),
                         SizedBox(width: 2.w),
                         PCLinkButton(
                             icon: FontAwesomeIcons.solidEnvelope,
                             color: Color(0xffdd4b39),
                             title: 'Email',
-                            onTap: () {}),
+                            onTap: () {
+                              handleTap('mailto:contact@ankan.dev');
+                            }),
                         SizedBox(width: 2.w),
                         PCLinkButton(
                           icon: FontAwesomeIcons.reddit,
                           color: Color(0xffff4500),
                           title: 'Reddit',
-                          onTap: () {},
+                          onTap: () {
+                            handleTap('https://www.reddit.com/user/Chrome597');
+                          },
                         ),
                         SizedBox(width: 2.w),
                         PCLinkButton(
                           icon: FontAwesomeIcons.googlePlay,
                           color: Color(0xff78C257),
                           title: 'Play Store',
-                          onTap: () {},
+                          onTap: () {
+                            handleTap(
+                                'https://play.google.com/store/apps/dev?id=6059531150910740578');
+                          },
                         ),
                       ],
                     ),
