@@ -20,7 +20,7 @@ class FeaturedSection extends StatelessWidget {
             height: 5.w,
           ),
           ClipRRect(
-            borderRadius: BorderRadius.circular(isMobile ? 15.0 : 25.0),
+            borderRadius: BorderRadius.circular(isMobile ? 10.0 : 20.0),
             child: Image.asset(
               'assets/images/featured_project.png',
               width: isMobile ? 90.w : 120.w,
