@@ -3,6 +3,7 @@ import 'package:ankan_site/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sizer/sizer.dart';
+import 'dart:js' as js;
 
 class FeaturedSection extends StatelessWidget {
   const FeaturedSection({Key? key}) : super(key: key);
@@ -111,7 +112,10 @@ class FeaturedSection extends StatelessWidget {
                   ),
                   backgroundColor: MaterialStateProperty.all(Color(0xff333333)),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  js.context.callMethod('open',
+                      ['https://github.com/ankanSikdar/flutter-wuphf-chat']);
+                },
                 icon: FaIcon(
                   FontAwesomeIcons.github,
                   size: isMobile ? 20.sp : 18.sp,
@@ -130,7 +134,11 @@ class FeaturedSection extends StatelessWidget {
                   ),
                   backgroundColor: MaterialStateProperty.all(Color(0xff78C257)),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  js.context.callMethod('open', [
+                    'https://play.google.com/store/apps/details?id=dev.ankan.wuphf_chat'
+                  ]);
+                },
                 icon: FaIcon(
                   FontAwesomeIcons.googlePlay,
                   size: isMobile ? 20.sp : 18.sp,
