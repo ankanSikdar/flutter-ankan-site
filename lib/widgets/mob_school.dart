@@ -22,8 +22,8 @@ class MobSchool extends StatelessWidget {
       children: [
         Image.asset(
           image,
-          width: 25.w,
-          fit: BoxFit.fitWidth,
+          height: 20.w,
+          fit: BoxFit.fitHeight,
         ),
         SizedBox(height: 1.w),
         Text(
