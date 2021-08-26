@@ -11,8 +11,11 @@ class FeaturedSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final isMobile = SizerUtil.width <= mobileWidth;
     return Container(
-      margin: EdgeInsets.only(top: isMobile ? 3.h : 2.h),
-      width: isMobile ? 90.w : 150.w,
+      margin: EdgeInsets.only(
+        top: isMobile ? 3.h : 2.h,
+        left: isMobile ? 5.w : 10.w,
+        right: isMobile ? 5.w : 10.w,
+      ),
       child: Column(
         children: [
           Header(text: 'Featured Project'),
@@ -34,16 +37,19 @@ class FeaturedSection extends StatelessWidget {
             ),
           ),
           SizedBox(height: 3.w),
-          Container(
-            width: isMobile ? 90.w : 150.w,
-            child: Text(
-              'Wuphf Chat is a full fledged chatting application made with Flutter.',
-              style: TextStyle(
-                fontSize: isMobile ? 14.sp : 10.sp,
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  'Wuphf Chat is a full fledged chatting application made with Flutter',
+                  style: TextStyle(
+                    fontSize: isMobile ? 14.sp : 10.sp,
+                  ),
+                  textAlign: isMobile ? TextAlign.center : TextAlign.start,
+                  // textAlign: TextAlign.,
+                ),
               ),
-              textAlign: TextAlign.start,
-              // textAlign: TextAlign.,
-            ),
+            ],
           ),
           SizedBox(height: 2.w),
           Padding(
@@ -59,16 +65,19 @@ class FeaturedSection extends StatelessWidget {
             ]),
           ),
           SizedBox(height: 2.5.w),
-          Container(
-            width: isMobile ? 90.w : 150.w,
-            child: Text(
-              'Built using:',
-              style: TextStyle(
-                fontSize: isMobile ? 14.sp : 10.sp,
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  'Technologies Used',
+                  style: TextStyle(
+                    fontSize: isMobile ? 14.sp : 10.sp,
+                  ),
+                  textAlign: isMobile ? TextAlign.center : TextAlign.start,
+                  // textAlign: TextAlign.,
+                ),
               ),
-              textAlign: TextAlign.start,
-              // textAlign: TextAlign.,
-            ),
+            ],
           ),
           SizedBox(height: 2.w),
           Padding(
@@ -82,16 +91,13 @@ class FeaturedSection extends StatelessWidget {
             ]),
           ),
           SizedBox(height: 2.w),
-          Container(
-            width: isMobile ? 90.w : 150.w,
-            child: Text(
-              'For more information click the GitHub or Play Store links below.',
-              style: TextStyle(
-                fontSize: isMobile ? 14.sp : 10.sp,
-              ),
-              textAlign: TextAlign.start,
-              // textAlign: TextAlign.,
+          Text(
+            'For more information click the GitHub or Play Store links below.',
+            style: TextStyle(
+              fontSize: isMobile ? 14.sp : 10.sp,
             ),
+            textAlign: TextAlign.center,
+            // textAlign: TextAlign.,
           ),
           SizedBox(height: 2.w),
           Row(
