@@ -25,7 +25,7 @@ class ContactSection extends StatelessWidget {
             style: TextStyle(fontSize: isMobile ? 14.sp : 10.sp),
             textAlign: TextAlign.center,
           ),
-          SizedBox(height: 2.w),
+          SizedBox(height: 3.w),
           isMobile
               ? Column(
                   children: [
@@ -36,7 +36,6 @@ class ContactSection extends StatelessWidget {
                           icon: FontAwesomeIcons.linkedin,
                           color: Color(0XFF0077b5),
                           title: 'LinkedIn',
-                          fontSize: 14.sp,
                           onTap: () {},
                         ),
                         SizedBox(width: 4.w),
@@ -44,7 +43,6 @@ class ContactSection extends StatelessWidget {
                           icon: FontAwesomeIcons.github,
                           color: Color(0xff333333),
                           title: 'GitHub',
-                          fontSize: 14.sp,
                           onTap: () {},
                         )
                       ],
@@ -57,7 +55,6 @@ class ContactSection extends StatelessWidget {
                           icon: FontAwesomeIcons.instagram,
                           color: Color(0XFF833ab4),
                           title: 'Instagram',
-                          fontSize: 14.sp,
                           onTap: () {},
                         ),
                         SizedBox(width: 4.w),
@@ -65,7 +62,6 @@ class ContactSection extends StatelessWidget {
                           icon: FontAwesomeIcons.twitter,
                           color: Color(0xff1da1f2),
                           title: 'Twitter',
-                          fontSize: 14.sp,
                           onTap: () {},
                         )
                       ],
@@ -78,7 +74,6 @@ class ContactSection extends StatelessWidget {
                           icon: FontAwesomeIcons.facebook,
                           color: Color(0XFF4267B2),
                           title: 'Facebook',
-                          fontSize: 14.sp,
                           onTap: () {},
                         ),
                         SizedBox(width: 4.w),
@@ -86,14 +81,96 @@ class ContactSection extends StatelessWidget {
                           icon: FontAwesomeIcons.solidEnvelope,
                           color: Color(0xffdd4b39),
                           title: 'Email',
-                          fontSize: 14.sp,
+                          onTap: () {},
+                        )
+                      ],
+                    ),
+                    SizedBox(height: 2.w),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        LinkButton(
+                          icon: FontAwesomeIcons.reddit,
+                          color: Color(0xffff4500),
+                          title: 'Reddit',
+                          onTap: () {},
+                        ),
+                        SizedBox(width: 4.w),
+                        LinkButton(
+                          icon: FontAwesomeIcons.googlePlay,
+                          color: Color(0xff78C257),
+                          title: 'Play Store',
                           onTap: () {},
                         )
                       ],
                     ),
                   ],
                 )
-              : Row(),
+              : Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        PCLinkButton(
+                            icon: FontAwesomeIcons.linkedin,
+                            color: Color(0XFF0077b5),
+                            title: 'LinkedIn',
+                            onTap: () {}),
+                        SizedBox(width: 2.w),
+                        PCLinkButton(
+                            icon: FontAwesomeIcons.github,
+                            color: Color(0xff333333),
+                            title: 'GitHub',
+                            onTap: () {}),
+                        SizedBox(width: 2.w),
+                        PCLinkButton(
+                          icon: FontAwesomeIcons.twitter,
+                          color: Color(0xff1da1f2),
+                          title: 'Twitter',
+                          onTap: () {},
+                        ),
+                        SizedBox(width: 2.w),
+                        PCLinkButton(
+                          icon: FontAwesomeIcons.instagram,
+                          color: Color(0XFF833ab4),
+                          title: 'Instagram',
+                          onTap: () {},
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 2.w),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        PCLinkButton(
+                            icon: FontAwesomeIcons.facebook,
+                            color: Color(0XFF4267B2),
+                            title: 'Facebook',
+                            onTap: () {}),
+                        SizedBox(width: 2.w),
+                        PCLinkButton(
+                            icon: FontAwesomeIcons.solidEnvelope,
+                            color: Color(0xffdd4b39),
+                            title: 'Email',
+                            onTap: () {}),
+                        SizedBox(width: 2.w),
+                        PCLinkButton(
+                          icon: FontAwesomeIcons.reddit,
+                          color: Color(0xffff4500),
+                          title: 'Reddit',
+                          onTap: () {},
+                        ),
+                        SizedBox(width: 2.w),
+                        PCLinkButton(
+                          icon: FontAwesomeIcons.googlePlay,
+                          color: Color(0xff78C257),
+                          title: 'Play Store',
+                          onTap: () {},
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
         ],
       ),
     );
@@ -104,7 +181,6 @@ class LinkButton extends StatelessWidget {
   final IconData icon;
   final Color color;
   final String title;
-  final double fontSize;
   final void Function() onTap;
 
   const LinkButton({
@@ -112,7 +188,6 @@ class LinkButton extends StatelessWidget {
     required this.icon,
     required this.color,
     required this.title,
-    required this.fontSize,
     required this.onTap,
   }) : super(key: key);
 
@@ -135,8 +210,48 @@ class LinkButton extends StatelessWidget {
         label: Text(
           title,
           style: TextStyle(
-            fontSize: fontSize,
+            fontSize: 14.sp,
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class PCLinkButton extends StatelessWidget {
+  final IconData icon;
+  final Color color;
+  final String title;
+  final void Function() onTap;
+
+  const PCLinkButton({
+    Key? key,
+    required this.icon,
+    required this.color,
+    required this.title,
+    required this.onTap,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton.icon(
+      style: ButtonStyle(
+        padding: MaterialStateProperty.all(
+          EdgeInsets.symmetric(horizontal: 4.w, vertical: 3.w),
+        ),
+        minimumSize: MaterialStateProperty.all(Size(35.w, 2.w)),
+        backgroundColor: MaterialStateProperty.all(color),
+        foregroundColor: MaterialStateProperty.all(Colors.white),
+      ),
+      onPressed: onTap,
+      icon: FaIcon(
+        icon,
+        size: 15.sp,
+      ),
+      label: Text(
+        title,
+        style: TextStyle(
+          fontSize: 8.sp,
         ),
       ),
     );
