@@ -62,6 +62,37 @@ class AboutSection extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
+          ),
+          SizedBox(height: isMobile ? 6.w : 1.5.w),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Expanded(
+                child: Image.asset(
+                  'assets/images/dart.png',
+                ),
+              ),
+              Expanded(
+                child: Image.asset(
+                  'assets/images/flutter.png',
+                ),
+              ),
+              Expanded(
+                child: Image.asset(
+                  'assets/images/android.png',
+                ),
+              ),
+              Expanded(
+                child: Image.asset(
+                  'assets/images/react.png',
+                ),
+              ),
+              Expanded(
+                child: Image.asset(
+                  'assets/images/javascript.png',
+                ),
+              ),
+            ],
           )
         ],
       ),
