@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:ankan_site/config/configs.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -22,10 +23,20 @@ class AboutSection extends StatelessWidget {
             ),
           ),
           SizedBox(height: 0.75.w),
-          Text(
-            'Hi, I\'m Ankan 🤝',
+          DefaultTextStyle(
             style: TextStyle(
+              fontFamily: 'OpenSans',
+              color: Theme.of(context).primaryColor,
               fontSize: isMobile ? 20.sp : 15.sp,
+            ),
+            child: AnimatedTextKit(
+              isRepeatingAnimation: false,
+              animatedTexts: [
+                TypewriterAnimatedText(
+                  'Hi I\'m Ankan 🤝',
+                  speed: Duration(milliseconds: 300),
+                ),
+              ],
             ),
           ),
           SizedBox(height: 0.5.h),
