@@ -40,13 +40,26 @@ class FeaturedSection extends StatelessWidget {
           Row(
             children: [
               Expanded(
-                child: Text(
-                  'Wuphf Chat is a full fledged chatting application made with Flutter',
-                  style: TextStyle(
-                    fontSize: isMobile ? 14.sp : 10.sp,
-                  ),
+                child: RichText(
                   textAlign: isMobile ? TextAlign.center : TextAlign.start,
-                  // textAlign: TextAlign.,
+                  text: TextSpan(
+                    style: TextStyle(
+                      fontSize: isMobile ? 14.sp : 10.sp,
+                      fontFamily: 'OpenSans',
+                      color: Theme.of(context).primaryColor,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: 'Wuphf Chat',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      TextSpan(
+                          text:
+                              ' is a full fledged chatting application made with Flutter')
+                    ],
+                  ),
                 ),
               ),
             ],
