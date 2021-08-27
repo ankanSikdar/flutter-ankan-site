@@ -55,7 +55,7 @@ class AboutSection extends StatelessWidget {
                 style: TextStyle(
                   fontSize: isMobile ? 14.sp : 10.sp,
                   fontFamily: 'OpenSans',
-                  color: Colors.black,
+                  color: Theme.of(context).primaryColor,
                 ),
                 children: [
                   TextSpan(text: 'an '),
