@@ -21,7 +21,7 @@ class BigCourse extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: onTap,
-          child: Image.asset(
+          child: Image.network(
             image,
             width: 20.w,
             fit: BoxFit.fitWidth,

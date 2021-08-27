@@ -18,23 +18,28 @@ class ProjectsSection extends StatefulWidget {
 class _ProjectsSectionState extends State<ProjectsSection> {
   final List<Map> images = [
     {
-      'image': 'assets/images/proj1.png',
+      'image':
+          'https://firebasestorage.googleapis.com/v0/b/ankan-dev-flutter.appspot.com/o/projects%2Fproj1.png?alt=media&token=22061bd7-24b9-4551-b4c2-f636956ae593',
       'link': 'https://github.com/ankanSikdar/flutter-shop-app',
     },
     {
-      'image': 'assets/images/proj2.png',
+      'image':
+          'https://firebasestorage.googleapis.com/v0/b/ankan-dev-flutter.appspot.com/o/projects%2Fproj2.png?alt=media&token=29e02b48-2a14-40fe-8039-08f25dc4843e',
       'link': 'https://github.com/ankanSikdar/flutter-favorite-places',
     },
     {
-      'image': 'assets/images/proj3.png',
+      'image':
+          'https://firebasestorage.googleapis.com/v0/b/ankan-dev-flutter.appspot.com/o/projects%2Fproj3.png?alt=media&token=cd570116-fd60-4abf-a781-bb5840830a33',
       'link': 'https://github.com/ankanSikdar/flutter-drinks-wiki',
     },
     {
-      'image': 'assets/images/proj4.png',
+      'image':
+          'https://firebasestorage.googleapis.com/v0/b/ankan-dev-flutter.appspot.com/o/projects%2Fproj4.png?alt=media&token=c48b8e3c-e42d-4011-a349-8aa1fd7d553c',
       'link': 'https://github.com/ankanSikdar/flutter-expense-tracker',
     },
     {
-      'image': 'assets/images/proj5.png',
+      'image':
+          'https://firebasestorage.googleapis.com/v0/b/ankan-dev-flutter.appspot.com/o/projects%2Fproj5.png?alt=media&token=57f975be-7759-4dc9-970c-7307e68d038e',
       'link': 'https://github.com/ankanSikdar/flutter-instagram',
     },
   ];
@@ -61,7 +66,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
               ),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(isMobile ? 10.0 : 20.0),
-                child: Image.asset(
+                child: Image.network(
                   element['image'],
                   fit: BoxFit.cover,
                 ),

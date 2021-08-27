@@ -15,33 +15,38 @@ const String collegeGraduated = 'Graduated in 2021';
 
 const String certTitle1 = 'Front-End Web UI Frameworks and Tools: Bootstrap 4';
 const String certSubtitle1 = 'Coursera';
-const String certImage1 = 'assets/images/course1.png';
+const String certImage1 =
+    'https://firebasestorage.googleapis.com/v0/b/ankan-dev-flutter.appspot.com/o/education%2Fcourse1.png?alt=media&token=9af74a28-474b-4802-845e-73b595a11bef';
 const String certLink1 =
     'https://www.coursera.org/account/accomplishments/certificate/D3ZU4TKQYWSH';
 
 const String certTitle2 = 'Front-End Web Development with React';
 const String certSubtitle2 = 'Coursera';
-const String certImage2 = 'assets/images/course2.png';
+const String certImage2 =
+    'https://firebasestorage.googleapis.com/v0/b/ankan-dev-flutter.appspot.com/o/education%2Fcourse2.png?alt=media&token=5b6cfb5a-ec6e-491c-9647-56948285b319';
 const String certLink2 =
     'https://www.coursera.org/account/accomplishments/certificate/7HDVGEPHEDKK';
 
 const String certTitle3 =
     'Multiplatform Mobile App Development with React Native';
 const String certSubtitle3 = 'Coursera';
-const String certImage3 = 'assets/images/course3.png';
+const String certImage3 =
+    'https://firebasestorage.googleapis.com/v0/b/ankan-dev-flutter.appspot.com/o/education%2Fcourse3.png?alt=media&token=41cef305-940d-4db4-8e5e-3e89a5d0557b';
 const String certLink3 =
     'https://www.coursera.org/account/accomplishments/certificate/3RV2QZBVHHMC';
 
 const String certTitle4 =
     'Server-side Development with NodeJS, Express and MongoDB';
 const String certSubtitle4 = 'Coursera';
-const String certImage4 = 'assets/images/course4.png';
+const String certImage4 =
+    'https://firebasestorage.googleapis.com/v0/b/ankan-dev-flutter.appspot.com/o/education%2Fcourse4.png?alt=media&token=2bc9ba26-dfcf-4aaa-843a-f4eddcf879be';
 const String certLink4 =
     'https://www.coursera.org/account/accomplishments/certificate/C7XLU7PHE59G';
 
 const String certTitle5 = 'Responsive Web Design';
 const String certSubtitle5 = 'FreeCodeCamp';
-const String certImage5 = 'assets/images/responsive.png';
+const String certImage5 =
+    'https://firebasestorage.googleapis.com/v0/b/ankan-dev-flutter.appspot.com/o/education%2Fresponsive.png?alt=media&token=0d13300b-a1e2-4189-8263-c85cb373ec59';
 const String certLink5 =
     'https://www.freecodecamp.org/certification/ankansikdar/responsive-web-design';
 

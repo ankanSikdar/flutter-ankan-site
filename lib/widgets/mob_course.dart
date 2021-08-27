@@ -20,7 +20,7 @@ class MobCourse extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: onTap,
-          child: Image.asset(
+          child: Image.network(
             image,
             width: 25.w,
             fit: BoxFit.fitWidth,

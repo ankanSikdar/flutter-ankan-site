@@ -29,8 +29,8 @@ class FeaturedSection extends StatelessWidget {
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(isMobile ? 10.0 : 20.0),
-              child: Image.asset(
-                'assets/images/featured_project.png',
+              child: Image.network(
+                'https://firebasestorage.googleapis.com/v0/b/ankan-dev-flutter.appspot.com/o/projects%2Ffeatured_project.png?alt=media&token=0cfbb7f9-b081-446b-b4e1-863f1bbceae9',
                 width: isMobile ? 90.w : 120.w,
                 fit: BoxFit.fitWidth,
               ),
