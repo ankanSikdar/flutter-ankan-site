@@ -1,10 +1,12 @@
 import 'package:ankan_site/config/configs.dart';
+import 'package:ankan_site/controllers/theme_controller.dart';
 import 'package:ankan_site/widgets/widgets.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'dart:js' as js;
+import 'package:get/get.dart';
 
 class ProjectsSection extends StatefulWidget {
   ProjectsSection({Key? key}) : super(key: key);
@@ -131,12 +133,18 @@ class _ProjectsSectionState extends State<ProjectsSection> {
               isMobile
                   ? Positioned(
                       bottom: 0.0,
-                      child: AnimatedSmoothIndicator(
-                        activeIndex: _current,
-                        count: 5,
-                        effect: WormEffect(
-                          activeDotColor: Colors.blueGrey.shade900,
-                          dotColor: Colors.blueGrey.shade200,
+                      child: GetBuilder<ThemeController>(
+                        builder: (controller) => AnimatedSmoothIndicator(
+                          activeIndex: _current,
+                          count: 5,
+                          effect: controller.themeMode == ThemeMode.light
+                              ? WormEffect(
+                                  activeDotColor: Colors.blueGrey.shade900,
+                                  dotColor: Colors.blueGrey.shade200,
+                                )
+                              : WormEffect(
+                                  activeDotColor: Colors.blueGrey.shade200,
+                                  dotColor: Colors.blueGrey.shade900),
                         ),
                       ),
                     )
@@ -169,12 +177,22 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                                       child: Padding(
                                         padding: EdgeInsets.only(
                                             top: 2.w, bottom: 2.w),
-                                        child: Text(
-                                          places[i],
-                                          style: TextStyle(
-                                            color: _isHovering[i]
-                                                ? Colors.blueGrey[900]
-                                                : Colors.blueGrey,
+                                        child: GetBuilder<ThemeController>(
+                                          builder: (controller) => Text(
+                                            places[i],
+                                            style: controller.themeMode ==
+                                                    ThemeMode.light
+                                                ? TextStyle(
+                                                    color: _isHovering[i]
+                                                        ? Colors.blueGrey[900]
+                                                        : Colors.blueGrey,
+                                                  )
+                                                : TextStyle(
+                                                    color: _isHovering[i]
+                                                        ? Colors.white
+                                                        : Colors
+                                                            .blueGrey.shade200,
+                                                  ),
                                           ),
                                         ),
                                       ),
@@ -187,15 +205,20 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                                       child: AnimatedOpacity(
                                         duration: Duration(milliseconds: 400),
                                         opacity: _isSelected[i] ? 1 : 0,
-                                        child: Container(
-                                          height: 5,
-                                          decoration: BoxDecoration(
-                                            color: Colors.blueGrey,
-                                            borderRadius: BorderRadius.all(
-                                              Radius.circular(10),
+                                        child: GetBuilder<ThemeController>(
+                                          builder: (controller) => Container(
+                                            height: 5,
+                                            decoration: BoxDecoration(
+                                              color: controller.themeMode ==
+                                                      ThemeMode.light
+                                                  ? Colors.blueGrey
+                                                  : Colors.blueGrey.shade200,
+                                              borderRadius: BorderRadius.all(
+                                                Radius.circular(10),
+                                              ),
                                             ),
+                                            width: 15.w,
                                           ),
-                                          width: 15.w,
                                         ),
                                       ),
                                     )

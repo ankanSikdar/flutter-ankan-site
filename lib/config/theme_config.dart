@@ -72,6 +72,7 @@ final darkTheme = ThemeData(
   iconTheme: IconThemeData(
     color: Colors.white,
   ),
+  cardColor: Colors.grey.shade900,
   appBarTheme: AppBarTheme(
     color: Colors.black,
     actionsIconTheme: IconThemeData(color: Colors.white),
