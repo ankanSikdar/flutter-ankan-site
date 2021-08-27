@@ -13,6 +13,38 @@ const String collegeTitle = 'HERITAGE INSTITUTE OF TECHNOLOGY';
 const String collegeSubtitle = 'MAKAUT, BTech in Information Technology';
 const String collegeGraduated = 'Graduated in 2021';
 
+const String certTitle1 = 'Front-End Web UI Frameworks and Tools: Bootstrap 4';
+const String certSubtitle1 = 'Coursera';
+const String certImage1 = 'assets/images/course1.png';
+const String certLink1 =
+    'https://www.coursera.org/account/accomplishments/certificate/D3ZU4TKQYWSH';
+
+const String certTitle2 = 'Front-End Web Development with React';
+const String certSubtitle2 = 'Coursera';
+const String certImage2 = 'assets/images/course2.png';
+const String certLink2 =
+    'https://www.coursera.org/account/accomplishments/certificate/7HDVGEPHEDKK';
+
+const String certTitle3 =
+    'Multiplatform Mobile App Development with React Native';
+const String certSubtitle3 = 'Coursera';
+const String certImage3 = 'assets/images/course3.png';
+const String certLink3 =
+    'https://www.coursera.org/account/accomplishments/certificate/3RV2QZBVHHMC';
+
+const String certTitle4 =
+    'Server-side Development with NodeJS, Express and MongoDB';
+const String certSubtitle4 = 'Coursera';
+const String certImage4 = 'assets/images/course4.png';
+const String certLink4 =
+    'https://www.coursera.org/account/accomplishments/certificate/C7XLU7PHE59G';
+
+const String certTitle5 = 'Responsive Web Design';
+const String certSubtitle5 = 'FreeCodeCamp';
+const String certImage5 = 'assets/images/responsive.png';
+const String certLink5 =
+    'https://www.freecodecamp.org/certification/ankansikdar/responsive-web-design';
+
 class EducationSection extends StatelessWidget {
   const EducationSection({Key? key}) : super(key: key);
 
@@ -113,36 +145,48 @@ class EducationSection extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     MobCourse(
-                      image: 'assets/images/course1.png',
-                      title:
-                          'Front-End Web UI Frameworks and Tools: Bootstrap 4',
-                      subtitle: 'Coursera',
+                      image: certImage1,
+                      title: certTitle1,
+                      subtitle: certSubtitle1,
+                      onTap: () {
+                        handleTap(certLink1);
+                      },
                     ),
                     SizedBox(height: 2.w),
                     MobCourse(
-                      image: 'assets/images/course2.png',
-                      title: 'Front-End Web Development with React',
-                      subtitle: 'Coursera',
+                      image: certImage2,
+                      title: certTitle2,
+                      subtitle: certSubtitle2,
+                      onTap: () {
+                        handleTap(certLink2);
+                      },
                     ),
                     SizedBox(height: 2.w),
                     MobCourse(
-                      image: 'assets/images/course3.png',
-                      title:
-                          'Multiplatform Mobile App Development with ReactNative',
-                      subtitle: 'Coursera',
+                      image: certImage3,
+                      title: certTitle3,
+                      subtitle: certSubtitle3,
+                      onTap: () {
+                        handleTap(certLink3);
+                      },
                     ),
                     SizedBox(height: 2.w),
                     MobCourse(
-                      image: 'assets/images/course4.png',
-                      title:
-                          'Server-side Development with NodeJS, Express and MongoDB',
-                      subtitle: 'Coursera',
+                      image: certImage4,
+                      title: certTitle4,
+                      subtitle: certSubtitle4,
+                      onTap: () {
+                        handleTap(certLink4);
+                      },
                     ),
                     SizedBox(height: 2.w),
                     MobCourse(
-                      image: 'assets/images/responsive.png',
-                      title: 'Responsive Web Design',
-                      subtitle: 'FreeCodeCamp',
+                      image: certImage5,
+                      title: certTitle5,
+                      subtitle: certSubtitle5,
+                      onTap: () {
+                        handleTap(certLink5);
+                      },
                     ),
                   ],
                 )
@@ -150,24 +194,33 @@ class EducationSection extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     BigCourseRow(
-                      imageLeft: 'assets/images/course1.png',
-                      imageRight: 'assets/images/course2.png',
-                      titleLeft:
-                          'Front-End Web UI Frameworks and Tools: Bootstrap 4',
-                      titleRight: 'Front-End Web Development with React',
-                      subtitleLeft: 'Coursera',
-                      subtitleRight: 'Coursera',
+                      imageLeft: certImage1,
+                      imageRight: certImage2,
+                      titleLeft: certTitle1,
+                      titleRight: certTitle2,
+                      subtitleLeft: certSubtitle1,
+                      subtitleRight: certSubtitle2,
+                      onTapLeft: () {
+                        handleTap(certLink1);
+                      },
+                      onTapRight: () {
+                        handleTap(certLink2);
+                      },
                     ),
                     SizedBox(height: 2.w),
                     BigCourseRow(
-                      imageLeft: 'assets/images/course3.png',
-                      imageRight: 'assets/images/course4.png',
-                      titleLeft:
-                          'Multiplatform Mobile App Development with React Native',
-                      titleRight:
-                          'Server-side Development with NodeJS, Express and MongoDB',
-                      subtitleLeft: 'Coursera',
-                      subtitleRight: 'Coursera',
+                      imageLeft: certImage3,
+                      imageRight: certImage4,
+                      titleLeft: certTitle3,
+                      titleRight: certTitle4,
+                      subtitleLeft: certSubtitle3,
+                      subtitleRight: certSubtitle4,
+                      onTapLeft: () {
+                        handleTap(certLink3);
+                      },
+                      onTapRight: () {
+                        handleTap(certLink4);
+                      },
                     ),
                     SizedBox(height: 2.w),
                     Row(
@@ -175,9 +228,12 @@ class EducationSection extends StatelessWidget {
                       children: [
                         Expanded(
                           child: BigCourse(
-                            image: 'assets/images/responsive.png',
-                            title: 'Responsive Web Design',
-                            subtitle: 'FreeCodeCamp',
+                            image: certImage5,
+                            title: certTitle5,
+                            subtitle: certSubtitle5,
+                            onTap: () {
+                              handleTap(certLink5);
+                            },
                           ),
                         ),
                       ],
@@ -197,6 +253,8 @@ class BigCourseRow extends StatelessWidget {
   final String titleRight;
   final String subtitleLeft;
   final String subtitleRight;
+  final void Function() onTapLeft;
+  final void Function() onTapRight;
 
   const BigCourseRow({
     Key? key,
@@ -206,6 +264,8 @@ class BigCourseRow extends StatelessWidget {
     required this.titleRight,
     required this.subtitleLeft,
     required this.subtitleRight,
+    required this.onTapLeft,
+    required this.onTapRight,
   }) : super(key: key);
 
   @override
@@ -218,6 +278,7 @@ class BigCourseRow extends StatelessWidget {
             image: imageLeft,
             title: titleLeft,
             subtitle: subtitleLeft,
+            onTap: onTapLeft,
           ),
         ),
         Expanded(
@@ -225,6 +286,7 @@ class BigCourseRow extends StatelessWidget {
             image: imageRight,
             title: titleRight,
             subtitle: subtitleRight,
+            onTap: onTapRight,
           ),
         ),
       ],
