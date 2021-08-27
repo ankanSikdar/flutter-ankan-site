@@ -4,6 +4,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'dart:js' as js;
 
 class ProjectsSection extends StatefulWidget {
   ProjectsSection({Key? key}) : super(key: key);
@@ -13,12 +14,27 @@ class ProjectsSection extends StatefulWidget {
 }
 
 class _ProjectsSectionState extends State<ProjectsSection> {
-  final List<String> images = [
-    'assets/images/proj1.png',
-    'assets/images/proj2.png',
-    'assets/images/proj3.png',
-    'assets/images/proj4.png',
-    'assets/images/proj5.png',
+  final List<Map> images = [
+    {
+      'image': 'assets/images/proj1.png',
+      'link': 'https://github.com/ankanSikdar/flutter-shop-app',
+    },
+    {
+      'image': 'assets/images/proj2.png',
+      'link': 'https://github.com/ankanSikdar/flutter-favorite-places',
+    },
+    {
+      'image': 'assets/images/proj3.png',
+      'link': 'https://github.com/ankanSikdar/flutter-drinks-wiki',
+    },
+    {
+      'image': 'assets/images/proj4.png',
+      'link': 'https://github.com/ankanSikdar/flutter-expense-tracker',
+    },
+    {
+      'image': 'assets/images/proj5.png',
+      'link': 'https://github.com/ankanSikdar/flutter-instagram',
+    },
   ];
 
   final List<String> places = [
@@ -32,16 +48,21 @@ class _ProjectsSectionState extends State<ProjectsSection> {
   List<Widget> generateImageTiles(bool isMobile) {
     return images
         .map(
-          (element) => Card(
-            elevation: 3.0,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(isMobile ? 10.0 : 20.0),
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(isMobile ? 10.0 : 20.0),
-              child: Image.asset(
-                element,
-                fit: BoxFit.cover,
+          (element) => InkWell(
+            onTap: () {
+              js.context.callMethod('open', [element['link']]);
+            },
+            child: Card(
+              elevation: 3.0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(isMobile ? 10.0 : 20.0),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(isMobile ? 10.0 : 20.0),
+                child: Image.asset(
+                  element['image'],
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),
@@ -59,14 +80,28 @@ class _ProjectsSectionState extends State<ProjectsSection> {
     final isMobile = SizerUtil.width <= mobileWidth;
     var imageSliders = generateImageTiles(isMobile);
     return Container(
-      // width: isMobile ? 90.w : 150.w,
       margin: EdgeInsets.only(top: isMobile ? 3.h : 2.h),
       child: Column(
         children: [
           Header(text: 'Other Projects'),
           SizedBox(
-            height: 5.w,
+            height: isMobile ? 3.w : 2.w,
           ),
+          Container(
+            margin: EdgeInsets.only(
+              left: isMobile ? 5.w : 10.w,
+              right: isMobile ? 5.w : 10.w,
+            ),
+            child: Text(
+              'Tap on the images below to check source code',
+              style: TextStyle(
+                fontSize: isMobile ? 14.sp : 10.sp,
+              ),
+              textAlign: TextAlign.center,
+              // textAlign: TextAlign.,
+            ),
+          ),
+          SizedBox(height: 2.w),
           Stack(
             alignment: Alignment.center,
             children: [
