@@ -27,12 +27,9 @@ class _HomeState extends State<Home> {
     final isMobile = SizerUtil.width <= mobileWidth;
     return Scaffold(
       key: _scaffoldKey,
-      drawer: isMobile ? Drawer() : null,
       body: CustomScrollView(
         slivers: [
-          CustomAppBar(
-            onMenuTap: handleMenuTap,
-          ),
+          CustomAppBar(),
           SliverToBoxAdapter(
             child: Column(
               children: [

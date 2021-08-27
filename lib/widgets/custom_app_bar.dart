@@ -4,9 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sizer/sizer.dart';
 
 class CustomAppBar extends StatelessWidget {
-  final void Function() onMenuTap;
-
-  const CustomAppBar({Key? key, required this.onMenuTap}) : super(key: key);
+  const CustomAppBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
