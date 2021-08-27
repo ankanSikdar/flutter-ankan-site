@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 final lightTheme = ThemeData(
   brightness: Brightness.light,
@@ -72,9 +73,9 @@ final darkTheme = ThemeData(
     color: Colors.white,
   ),
   appBarTheme: AppBarTheme(
-    color: Colors.grey.shade900,
+    color: Colors.black,
     actionsIconTheme: IconThemeData(color: Colors.white),
     foregroundColor: Colors.white,
-    shadowColor: Colors.grey.shade800,
+    shadowColor: Colors.grey.shade600,
   ),
 );

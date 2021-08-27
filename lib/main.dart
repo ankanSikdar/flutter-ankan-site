@@ -4,7 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
+import 'controllers/theme_controller.dart';
+
 void main() {
+  Get.lazyPut<ThemeController>(() => ThemeController());
+
   runApp(MyApp());
 }
 
