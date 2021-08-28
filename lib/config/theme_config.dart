@@ -55,9 +55,9 @@ final darkTheme = ThemeData(
           vertical: 16.0,
         ),
       ),
-      backgroundColor: MaterialStateProperty.all(Colors.white),
-      foregroundColor: MaterialStateProperty.all(Colors.black),
-      overlayColor: MaterialStateProperty.all(Colors.white),
+      backgroundColor: MaterialStateProperty.all(Colors.black),
+      foregroundColor: MaterialStateProperty.all(Colors.white),
+      overlayColor: MaterialStateProperty.all(Colors.white10),
     ),
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
