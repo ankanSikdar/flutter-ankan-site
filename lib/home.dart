@@ -81,23 +81,23 @@ class _HomeState extends State<Home> {
               children: [
                 AboutSection(key: _aboutKey),
                 SizedBox(
-                  height: isMobile ? 20.w : 0,
+                  height: isMobile ? 20.w : 7.w,
                 ),
                 FeaturedSection(key: _featuredKey),
                 SizedBox(
-                  height: isMobile ? 20.w : 5.w,
+                  height: isMobile ? 20.w : 7.w,
                 ),
                 ProjectsSection(key: _projectsKey),
                 SizedBox(
-                  height: isMobile ? 20.w : 5.w,
+                  height: isMobile ? 20.w : 7.w,
                 ),
                 EducationSection(key: _educationKey),
                 SizedBox(
-                  height: isMobile ? 20.w : 5.w,
+                  height: isMobile ? 20.w : 7.w,
                 ),
                 ContactSection(key: _contactKey),
                 SizedBox(
-                  height: isMobile ? 20.w : 5.w,
+                  height: isMobile ? 20.w : 7.w,
                 ),
                 FooterSection(),
               ],
