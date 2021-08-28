@@ -87,7 +87,6 @@ class _ProjectsSectionState extends State<ProjectsSection> {
     final isMobile = SizerUtil.width <= mobileWidth;
     var imageSliders = generateImageTiles(isMobile);
     return Container(
-      margin: EdgeInsets.only(top: isMobile ? 3.h : 2.h),
       child: Column(
         children: [
           Header(text: 'Other Projects'),
