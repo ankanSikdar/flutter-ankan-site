@@ -16,8 +16,8 @@ class AboutSection extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(isMobile ? 25.w : 15.w),
-            child: Image.network(
-              'https://pbs.twimg.com/profile_images/1052236915431206912/S0hgTvyN_400x400.jpg',
+            child: Image.asset(
+              'assets/images/ankan.jpeg',
               height: isMobile ? 50.w : 30.w,
               width: isMobile ? 50.w : 30.w,
             ),
