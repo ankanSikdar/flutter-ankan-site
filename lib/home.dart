@@ -133,19 +133,15 @@ class MobileDrawer extends StatelessWidget {
         children: [
           DrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.grey.shade800,
+              color: Colors.black,
             ),
             child: Container(
-              width: double.infinity,
-              alignment: Alignment.bottomLeft,
-              child: Text(
-                'contact@ankan.dev',
-                style: TextStyle(
-                  fontSize: 16.sp,
-                  color: Colors.white,
-                ),
-              ),
-            ),
+                width: double.infinity,
+                alignment: Alignment.center,
+                child: Image.asset(
+                  'assets/images/drawer.png',
+                  fit: BoxFit.fitWidth,
+                )),
           ),
           SizedBox(height: 5.w),
           DrawerButton(
