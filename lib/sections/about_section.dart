@@ -2,6 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:ankan_site/config/configs.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class AboutSection extends StatelessWidget {
   const AboutSection({Key? key}) : super(key: key);
@@ -16,8 +17,9 @@ class AboutSection extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(isMobile ? 25.w : 15.w),
-            child: Image.asset(
-              'assets/images/ankan.jpeg',
+            child: FadeInImage(
+              image: AssetImage('assets/images/ankan.jpeg'),
+              placeholder: MemoryImage(kTransparentImage),
               height: isMobile ? 50.w : 30.w,
               width: isMobile ? 50.w : 30.w,
             ),
@@ -79,28 +81,43 @@ class AboutSection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Expanded(
-                child: Image.asset(
-                  'assets/images/dart.png',
+                child: FadeInImage(
+                  placeholder: MemoryImage(kTransparentImage),
+                  image: AssetImage(
+                    'assets/images/dart.png',
+                  ),
                 ),
               ),
               Expanded(
-                child: Image.asset(
-                  'assets/images/flutter.png',
+                child: FadeInImage(
+                  placeholder: MemoryImage(kTransparentImage),
+                  image: AssetImage(
+                    'assets/images/flutter.png',
+                  ),
                 ),
               ),
               Expanded(
-                child: Image.asset(
-                  'assets/images/android.png',
+                child: FadeInImage(
+                  placeholder: MemoryImage(kTransparentImage),
+                  image: AssetImage(
+                    'assets/images/android.png',
+                  ),
                 ),
               ),
               Expanded(
-                child: Image.asset(
-                  'assets/images/react.png',
+                child: FadeInImage(
+                  placeholder: MemoryImage(kTransparentImage),
+                  image: AssetImage(
+                    'assets/images/react.png',
+                  ),
                 ),
               ),
               Expanded(
-                child: Image.asset(
-                  'assets/images/javascript.png',
+                child: FadeInImage(
+                  placeholder: MemoryImage(kTransparentImage),
+                  image: AssetImage(
+                    'assets/images/javascript.png',
+                  ),
                 ),
               ),
             ],

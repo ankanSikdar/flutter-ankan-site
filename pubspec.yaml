@@ -29,6 +29,7 @@ dependencies:
   get: ^4.3.8
   sizer: ^2.0.13
   smooth_page_indicator: ^0.3.0-nullsafety.0
+  transparent_image: ^2.0.0
 
 dev_dependencies:
   flutter_test:
