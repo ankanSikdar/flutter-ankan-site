@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class CustomAppBar extends StatelessWidget {
   final void Function(String name) onSectionTap;
@@ -30,16 +31,22 @@ class CustomAppBar extends StatelessWidget {
       pinned: true,
       title: GetBuilder<ThemeController>(builder: (controller) {
         if (controller.themeMode == ThemeMode.light) {
-          return Image.asset(
-            'assets/images/logo_light.png',
+          return FadeInImage(
+            placeholder: MemoryImage(kTransparentImage),
             height: isMobile ? 10.h : 5.h,
             fit: BoxFit.fitHeight,
+            image: AssetImage(
+              'assets/images/logo_light.png',
+            ),
           );
         } else {
-          return Image.asset(
-            'assets/images/logo_dark.png',
+          return FadeInImage(
+            placeholder: MemoryImage(kTransparentImage),
             height: isMobile ? 10.h : 5.h,
             fit: BoxFit.fitHeight,
+            image: AssetImage(
+              'assets/images/logo_dark.png',
+            ),
           );
         }
       }),

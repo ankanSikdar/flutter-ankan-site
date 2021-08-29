@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class MobCourse extends StatelessWidget {
   final String image;
@@ -20,10 +21,13 @@ class MobCourse extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: onTap,
-          child: Image.network(
-            image,
+          child: FadeInImage(
+            placeholder: MemoryImage(kTransparentImage),
             width: 25.w,
             fit: BoxFit.fitWidth,
+            image: NetworkImage(
+              image,
+            ),
           ),
         ),
         SizedBox(width: 2.w),

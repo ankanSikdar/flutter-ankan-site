@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class MobSchool extends StatelessWidget {
   final String image;
@@ -22,10 +23,13 @@ class MobSchool extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Image.asset(
-          image,
+        FadeInImage(
+          placeholder: MemoryImage(kTransparentImage),
           height: 20.w,
           fit: BoxFit.fitHeight,
+          image: AssetImage(
+            image,
+          ),
         ),
         SizedBox(height: 1.w),
         InkWell(

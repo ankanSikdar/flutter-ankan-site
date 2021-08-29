@@ -7,6 +7,7 @@ import 'package:sizer/sizer.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'dart:js' as js;
 import 'package:get/get.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class ProjectsSection extends StatefulWidget {
   ProjectsSection({Key? key}) : super(key: key);
@@ -66,9 +67,12 @@ class _ProjectsSectionState extends State<ProjectsSection> {
               ),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(isMobile ? 10.0 : 20.0),
-                child: Image.network(
-                  element['image'],
+                child: FadeInImage(
+                  placeholder: MemoryImage(kTransparentImage),
                   fit: BoxFit.cover,
+                  image: NetworkImage(
+                    element['image'],
+                  ),
                 ),
               ),
             ),

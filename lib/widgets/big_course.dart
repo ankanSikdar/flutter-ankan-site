@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class BigCourse extends StatelessWidget {
   final String image;
@@ -21,10 +22,13 @@ class BigCourse extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: onTap,
-          child: Image.network(
-            image,
+          child: FadeInImage(
+            placeholder: MemoryImage(kTransparentImage),
             width: 20.w,
             fit: BoxFit.fitWidth,
+            image: NetworkImage(
+              image,
+            ),
           ),
         ),
         SizedBox(width: 2.w),

@@ -5,6 +5,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sizer/sizer.dart';
 import 'dart:js' as js;
 
+import 'package:transparent_image/transparent_image.dart';
+
 class FeaturedSection extends StatelessWidget {
   const FeaturedSection({Key? key}) : super(key: key);
 
@@ -29,10 +31,13 @@ class FeaturedSection extends StatelessWidget {
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(isMobile ? 10.0 : 20.0),
-              child: Image.network(
-                'https://firebasestorage.googleapis.com/v0/b/ankan-dev-flutter.appspot.com/o/projects%2Ffeatured_project.png?alt=media&token=0cfbb7f9-b081-446b-b4e1-863f1bbceae9',
+              child: FadeInImage(
+                placeholder: MemoryImage(kTransparentImage),
                 width: isMobile ? 90.w : 120.w,
                 fit: BoxFit.fitWidth,
+                image: NetworkImage(
+                  'https://firebasestorage.googleapis.com/v0/b/ankan-dev-flutter.appspot.com/o/projects%2Ffeatured_project.png?alt=media&token=0cfbb7f9-b081-446b-b4e1-863f1bbceae9',
+                ),
               ),
             ),
           ),
