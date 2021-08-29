@@ -21,7 +21,7 @@ class CustomAppBar extends StatelessWidget {
           ? IconButton(
               onPressed: onMenuTap,
               icon: FaIcon(
-                FontAwesomeIcons.stream,
+                FontAwesomeIcons.bars,
                 color: Theme.of(context).primaryColor,
               ),
             )

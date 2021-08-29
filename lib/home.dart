@@ -68,7 +68,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     final isMobile = SizerUtil.width <= mobileWidth;
     return Scaffold(
-      drawer: isMobile ? Drawer() : null,
+      drawer: isMobile ? MobileDrawer() : null,
       key: _scaffoldKey,
       body: CustomScrollView(
         slivers: [
@@ -104,6 +104,62 @@ class _HomeState extends State<Home> {
             ),
           )
         ],
+      ),
+    );
+  }
+}
+
+class MobileDrawer extends StatelessWidget {
+  const MobileDrawer({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        children: [
+          DrawerHeader(
+            decoration: BoxDecoration(
+              color: Colors.grey.shade800,
+            ),
+            child: Container(
+              width: double.infinity,
+              alignment: Alignment.bottomLeft,
+              child: Text(
+                'contact@ankan.dev',
+                style: TextStyle(
+                  fontSize: 16.sp,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+          SizedBox(height: 5.w),
+          DrawerButton(title: 'About'),
+          DrawerButton(title: 'Featured'),
+          DrawerButton(title: 'Projects'),
+          DrawerButton(title: 'Education'),
+          DrawerButton(title: 'Contact'),
+        ],
+      ),
+    );
+  }
+}
+
+class DrawerButton extends StatelessWidget {
+  final String title;
+  const DrawerButton({Key? key, required this.title}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {},
+      child: Padding(
+        padding: EdgeInsets.symmetric(vertical: 3.w),
+        child: Text(
+          title,
+          textAlign: TextAlign.center,
+          style: TextStyle(fontSize: 18.sp),
+        ),
       ),
     );
   }
