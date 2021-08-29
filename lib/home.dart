@@ -68,7 +68,12 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     final isMobile = SizerUtil.width <= mobileWidth;
     return Scaffold(
-      drawer: isMobile ? MobileDrawer() : null,
+      drawer: isMobile
+          ? MobileDrawer(
+              handleMenuTap: handleMenuTap,
+              handleSectionTap: handleSectionTap,
+            )
+          : null,
       key: _scaffoldKey,
       body: CustomScrollView(
         slivers: [
@@ -110,7 +115,16 @@ class _HomeState extends State<Home> {
 }
 
 class MobileDrawer extends StatelessWidget {
-  const MobileDrawer({Key? key}) : super(key: key);
+  final void Function() handleMenuTap;
+  final void Function(String title) handleSectionTap;
+  const MobileDrawer(
+      {Key? key, required this.handleMenuTap, required this.handleSectionTap})
+      : super(key: key);
+
+  void onTap(String title) {
+    handleMenuTap();
+    handleSectionTap(title);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -134,11 +148,26 @@ class MobileDrawer extends StatelessWidget {
             ),
           ),
           SizedBox(height: 5.w),
-          DrawerButton(title: 'About'),
-          DrawerButton(title: 'Featured'),
-          DrawerButton(title: 'Projects'),
-          DrawerButton(title: 'Education'),
-          DrawerButton(title: 'Contact'),
+          DrawerButton(
+            title: 'About',
+            onTap: onTap,
+          ),
+          DrawerButton(
+            title: 'Featured',
+            onTap: onTap,
+          ),
+          DrawerButton(
+            title: 'Projects',
+            onTap: onTap,
+          ),
+          DrawerButton(
+            title: 'Education',
+            onTap: onTap,
+          ),
+          DrawerButton(
+            title: 'Contact',
+            onTap: onTap,
+          ),
         ],
       ),
     );
@@ -147,12 +176,16 @@ class MobileDrawer extends StatelessWidget {
 
 class DrawerButton extends StatelessWidget {
   final String title;
-  const DrawerButton({Key? key, required this.title}) : super(key: key);
+  final void Function(String name) onTap;
+  const DrawerButton({Key? key, required this.title, required this.onTap})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        onTap(title);
+      },
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: 3.w),
         child: Text(
