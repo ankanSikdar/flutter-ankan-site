@@ -35,7 +35,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
     },
     {
       'image':
-          'https://firebasestorage.googleapis.com/v0/b/ankan-dev-flutter.appspot.com/o/projects%2Fproj4.png?alt=media&token=c48b8e3c-e42d-4011-a349-8aa1fd7d553c',
+          'https://firebasestorage.googleapis.com/v0/b/ankan-dev-flutter.appspot.com/o/projects%2Fproj_4.png?alt=media&token=46998d2d-ad52-43b7-bf45-1425df9d6118',
       'link': 'https://github.com/ankanSikdar/flutter-expense-tracker',
     },
     {
