@@ -6,4 +6,3 @@ export 'big_school.dart';
 export 'mob_course.dart';
 export 'big_course.dart';
 export 'link_button.dart';
-export 'pc_link_button.dart';
