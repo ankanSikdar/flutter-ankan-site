@@ -3,6 +3,5 @@ export 'header.dart';
 export 'unordered_list.dart';
 export 'mob_school.dart';
 export 'big_school.dart';
-export 'mob_course.dart';
-export 'big_course.dart';
 export 'link_button.dart';
+export 'course.dart';
