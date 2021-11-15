@@ -57,6 +57,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
     return images
         .map(
           (element) => InkWell(
+            borderRadius: BorderRadius.circular(isMobile ? 10.0 : 20.0),
             onTap: () {
               js.context.callMethod('open', [element['link']]);
             },
@@ -69,7 +70,9 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                 borderRadius: BorderRadius.circular(isMobile ? 10.0 : 20.0),
                 child: FadeInImage(
                   placeholder: MemoryImage(kTransparentImage),
-                  fit: BoxFit.cover,
+                  width: isMobile ? 90.w : 120.w,
+                  height: isMobile ? 65.w : 75.w,
+                  fit: BoxFit.fitWidth,
                   image: NetworkImage(
                     element['image'],
                   ),

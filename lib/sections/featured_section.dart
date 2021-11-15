@@ -34,6 +34,7 @@ class FeaturedSection extends StatelessWidget {
               child: FadeInImage(
                 placeholder: MemoryImage(kTransparentImage),
                 width: isMobile ? 90.w : 120.w,
+                height: isMobile ? 49.w : 67.w,
                 fit: BoxFit.fitWidth,
                 image: NetworkImage(
                   'https://firebasestorage.googleapis.com/v0/b/ankan-dev-flutter.appspot.com/o/projects%2Ffeatured_project.png?alt=media&token=0cfbb7f9-b081-446b-b4e1-863f1bbceae9',
