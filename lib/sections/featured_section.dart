@@ -119,14 +119,13 @@ class FeaturedSection extends StatelessWidget {
           ),
           SizedBox(height: isMobile ? 4.w : 2.w),
           Row(
-            mainAxisAlignment: isMobile
-                ? MainAxisAlignment.spaceBetween
-                : MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               ElevatedButton.icon(
                 style: ButtonStyle(
                   padding: MaterialStateProperty.all(
-                    EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.w),
+                    EdgeInsets.symmetric(
+                        horizontal: isMobile ? 4.w : 8.w, vertical: 4.w),
                   ),
                   backgroundColor: MaterialStateProperty.all(Color(0xff333333)),
                 ),
@@ -148,7 +147,8 @@ class FeaturedSection extends StatelessWidget {
               ElevatedButton.icon(
                 style: ButtonStyle(
                   padding: MaterialStateProperty.all(
-                    EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.w),
+                    EdgeInsets.symmetric(
+                        horizontal: isMobile ? 4.w : 8.w, vertical: 4.w),
                   ),
                   backgroundColor: MaterialStateProperty.all(Color(0xff78C257)),
                 ),
