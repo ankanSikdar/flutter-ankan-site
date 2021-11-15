@@ -1,3 +1,4 @@
+import 'package:ankan_site/widgets/course.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'dart:js' as js;
@@ -145,154 +146,73 @@ class EducationSection extends StatelessWidget {
             ),
           ),
           SizedBox(height: 2.w),
-          isMobile
-              ? Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    MobCourse(
-                      image: certImage1,
-                      title: certTitle1,
-                      subtitle: certSubtitle1,
-                      onTap: () {
-                        handleTap(certLink1);
-                      },
-                    ),
-                    SizedBox(height: 2.w),
-                    MobCourse(
-                      image: certImage2,
-                      title: certTitle2,
-                      subtitle: certSubtitle2,
-                      onTap: () {
-                        handleTap(certLink2);
-                      },
-                    ),
-                    SizedBox(height: 2.w),
-                    MobCourse(
-                      image: certImage3,
-                      title: certTitle3,
-                      subtitle: certSubtitle3,
-                      onTap: () {
-                        handleTap(certLink3);
-                      },
-                    ),
-                    SizedBox(height: 2.w),
-                    MobCourse(
-                      image: certImage4,
-                      title: certTitle4,
-                      subtitle: certSubtitle4,
-                      onTap: () {
-                        handleTap(certLink4);
-                      },
-                    ),
-                    SizedBox(height: 2.w),
-                    MobCourse(
-                      image: certImage5,
-                      title: certTitle5,
-                      subtitle: certSubtitle5,
-                      onTap: () {
-                        handleTap(certLink5);
-                      },
-                    ),
-                  ],
-                )
-              : Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    BigCourseRow(
-                      imageLeft: certImage1,
-                      imageRight: certImage2,
-                      titleLeft: certTitle1,
-                      titleRight: certTitle2,
-                      subtitleLeft: certSubtitle1,
-                      subtitleRight: certSubtitle2,
-                      onTapLeft: () {
-                        handleTap(certLink1);
-                      },
-                      onTapRight: () {
-                        handleTap(certLink2);
-                      },
-                    ),
-                    SizedBox(height: 2.w),
-                    BigCourseRow(
-                      imageLeft: certImage3,
-                      imageRight: certImage4,
-                      titleLeft: certTitle3,
-                      titleRight: certTitle4,
-                      subtitleLeft: certSubtitle3,
-                      subtitleRight: certSubtitle4,
-                      onTapLeft: () {
-                        handleTap(certLink3);
-                      },
-                      onTapRight: () {
-                        handleTap(certLink4);
-                      },
-                    ),
-                    SizedBox(height: 2.w),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Expanded(
-                          child: BigCourse(
-                            image: certImage5,
-                            title: certTitle5,
-                            subtitle: certSubtitle5,
-                            onTap: () {
-                              handleTap(certLink5);
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+          CoursesSection(isMobile: isMobile),
         ],
       ),
     );
   }
 }
 
-class BigCourseRow extends StatelessWidget {
-  final String imageLeft;
-  final String imageRight;
-  final String titleLeft;
-  final String titleRight;
-  final String subtitleLeft;
-  final String subtitleRight;
-  final void Function() onTapLeft;
-  final void Function() onTapRight;
+class CoursesSection extends StatelessWidget {
+  final bool isMobile;
+  void handleTap(String url) {
+    js.context.callMethod('open', [url]);
+  }
 
-  const BigCourseRow({
-    Key? key,
-    required this.imageLeft,
-    required this.imageRight,
-    required this.titleLeft,
-    required this.titleRight,
-    required this.subtitleLeft,
-    required this.subtitleRight,
-    required this.onTapLeft,
-    required this.onTapRight,
-  }) : super(key: key);
+  const CoursesSection({Key? key, required this.isMobile}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+    return Wrap(
+      direction: Axis.horizontal,
+      spacing: isMobile ? 0.w : 2.w,
+      alignment: WrapAlignment.spaceBetween,
+      runSpacing: 5.w,
       children: [
-        Expanded(
-          child: BigCourse(
-            image: imageLeft,
-            title: titleLeft,
-            subtitle: subtitleLeft,
-            onTap: onTapLeft,
-          ),
+        CourseWidget(
+          isMobile: isMobile,
+          image: certImage1,
+          title: certTitle1,
+          subtitle: certSubtitle1,
+          onTap: () {
+            handleTap(certLink1);
+          },
         ),
-        Expanded(
-          child: BigCourse(
-            image: imageRight,
-            title: titleRight,
-            subtitle: subtitleRight,
-            onTap: onTapRight,
-          ),
+        CourseWidget(
+          isMobile: isMobile,
+          image: certImage2,
+          title: certTitle2,
+          subtitle: certSubtitle2,
+          onTap: () {
+            handleTap(certLink2);
+          },
+        ),
+        CourseWidget(
+          isMobile: isMobile,
+          image: certImage3,
+          title: certTitle3,
+          subtitle: certSubtitle3,
+          onTap: () {
+            handleTap(certLink3);
+          },
+        ),
+        CourseWidget(
+          isMobile: isMobile,
+          image: certImage4,
+          title: certTitle4,
+          subtitle: certSubtitle4,
+          onTap: () {
+            handleTap(certLink4);
+          },
+        ),
+        CourseWidget(
+          isMobile: isMobile,
+          image: certImage5,
+          title: certTitle5,
+          subtitle: certSubtitle5,
+          onTap: () {
+            handleTap(certLink5);
+          },
         ),
       ],
     );
