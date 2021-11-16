@@ -1,8 +1,10 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:ankan_site/config/configs.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sizer/sizer.dart';
 import 'package:transparent_image/transparent_image.dart';
+import 'dart:js' as js;
 
 class AboutSection extends StatelessWidget {
   const AboutSection({Key? key}) : super(key: key);
@@ -76,53 +78,40 @@ class AboutSection extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
           ),
-          SizedBox(height: isMobile ? 6.w : 1.5.w),
+          SizedBox(height: isMobile ? 7.w : 1.w),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Expanded(
-                child: FadeInImage(
-                  placeholder: MemoryImage(kTransparentImage),
-                  image: AssetImage(
-                    'assets/images/dart.png',
-                  ),
-                ),
-              ),
-              Expanded(
-                child: FadeInImage(
-                  placeholder: MemoryImage(kTransparentImage),
-                  image: AssetImage(
-                    'assets/images/flutter.png',
-                  ),
-                ),
-              ),
-              Expanded(
-                child: FadeInImage(
-                  placeholder: MemoryImage(kTransparentImage),
-                  image: AssetImage(
-                    'assets/images/android.png',
-                  ),
-                ),
-              ),
-              Expanded(
-                child: FadeInImage(
-                  placeholder: MemoryImage(kTransparentImage),
-                  image: AssetImage(
-                    'assets/images/react.png',
-                  ),
-                ),
-              ),
-              Expanded(
-                child: FadeInImage(
-                  placeholder: MemoryImage(kTransparentImage),
-                  image: AssetImage(
-                    'assets/images/javascript.png',
-                  ),
-                ),
-              ),
+              LanguageImage(asset: 'assets/images/dart.png'),
+              LanguageImage(asset: 'assets/images/flutter.png'),
+              LanguageImage(asset: 'assets/images/android.png'),
+              LanguageImage(asset: 'assets/images/react.png'),
+              LanguageImage(asset: 'assets/images/javascript.png'),
             ],
-          )
+          ),
         ],
+      ),
+    );
+  }
+}
+
+class LanguageImage extends StatelessWidget {
+  final String asset;
+
+  const LanguageImage({
+    Key? key,
+    required this.asset,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return FadeInImage(
+      placeholder: MemoryImage(kTransparentImage),
+      height: 20.w,
+      width: 20.w,
+      fit: BoxFit.fitWidth,
+      image: AssetImage(
+        asset,
       ),
     );
   }
