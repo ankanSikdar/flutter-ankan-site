@@ -35,7 +35,7 @@ class AboutSection extends StatelessWidget {
               isRepeatingAnimation: false,
               animatedTexts: [
                 TypewriterAnimatedText(
-                  'Hi I\'m Ankan 🤝',
+                  'Hi I\'m Ankan \u{1F91D}',
                   speed: Duration(milliseconds: 300),
                 ),
               ],
