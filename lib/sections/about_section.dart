@@ -1,10 +1,8 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:ankan_site/config/configs.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sizer/sizer.dart';
 import 'package:transparent_image/transparent_image.dart';
-import 'dart:js' as js;
 
 class AboutSection extends StatelessWidget {
   const AboutSection({Key? key}) : super(key: key);
@@ -78,37 +76,7 @@ class AboutSection extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
           ),
-          SizedBox(height: isMobile ? 5.w : 2.w),
-          ElevatedButton.icon(
-            style: ButtonStyle(
-              padding: MaterialStateProperty.all(
-                isMobile ? EdgeInsets.all(4.w) : EdgeInsets.all(3.w),
-              ),
-              minimumSize: isMobile
-                  ? MaterialStateProperty.all(Size(40.w, 1.w))
-                  : MaterialStateProperty.all(Size(35.w, 2.w)),
-              backgroundColor:
-                  MaterialStateProperty.all(Theme.of(context).primaryColor),
-              foregroundColor: MaterialStateProperty.all(
-                  Theme.of(context).scaffoldBackgroundColor),
-            ),
-            onPressed: () {
-              js.context.callMethod('open', [
-                "https://firebasestorage.googleapis.com/v0/b/ankan-dev-flutter.appspot.com/o/resume%2FAnkan's%20Resume.pdf?alt=media&token=7cb097cc-6b5e-4ec4-8390-a0edf231eef9"
-              ]);
-            },
-            icon: FaIcon(
-              FontAwesomeIcons.fileDownload,
-              size: isMobile ? 20.sp : 15.sp,
-            ),
-            label: Text(
-              'Download Resume',
-              style: TextStyle(
-                fontSize: isMobile ? 14.sp : 8.sp,
-              ),
-            ),
-          ),
-          SizedBox(height: isMobile ? 7.w : 1.w),
+          SizedBox(height: isMobile ? 7.w : 3.w),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
