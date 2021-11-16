@@ -70,9 +70,8 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                 borderRadius: BorderRadius.circular(isMobile ? 10.0 : 20.0),
                 child: FadeInImage(
                   placeholder: MemoryImage(kTransparentImage),
-                  width: isMobile ? 90.w : 120.w,
                   height: isMobile ? 65.w : 75.w,
-                  fit: BoxFit.fitWidth,
+                  fit: BoxFit.fill,
                   image: NetworkImage(
                     element['image'],
                   ),
@@ -111,7 +110,6 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                 fontSize: isMobile ? 14.sp : 10.sp,
               ),
               textAlign: TextAlign.center,
-              // textAlign: TextAlign.,
             ),
           ),
           SizedBox(height: 2.w),
