@@ -119,58 +119,27 @@ class FeaturedSection extends StatelessWidget {
             // textAlign: TextAlign.,
           ),
           SizedBox(height: isMobile ? 4.w : 2.w),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ElevatedButton.icon(
-                style: ButtonStyle(
-                  padding: MaterialStateProperty.all(
-                    EdgeInsets.symmetric(
-                        horizontal: isMobile ? 4.w : 8.w, vertical: 4.w),
-                  ),
-                  backgroundColor: MaterialStateProperty.all(Color(0xff333333)),
-                ),
-                onPressed: () {
+          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+            LinkButton(
+                icon: FontAwesomeIcons.github,
+                color: Color(0xff333333),
+                title: 'GitHub',
+                onTap: () {
                   js.context.callMethod('open',
                       ['https://github.com/ankanSikdar/flutter-wuphf-chat']);
                 },
-                icon: FaIcon(
-                  FontAwesomeIcons.github,
-                  size: isMobile ? 20.sp : 18.sp,
-                ),
-                label: Text(
-                  'GitHub',
-                  style: TextStyle(
-                    fontSize: isMobile ? 14.sp : 8.sp,
-                  ),
-                ),
-              ),
-              ElevatedButton.icon(
-                style: ButtonStyle(
-                  padding: MaterialStateProperty.all(
-                    EdgeInsets.symmetric(
-                        horizontal: isMobile ? 4.w : 8.w, vertical: 4.w),
-                  ),
-                  backgroundColor: MaterialStateProperty.all(Color(0xff78C257)),
-                ),
-                onPressed: () {
+                isMobile: isMobile),
+            LinkButton(
+                icon: FontAwesomeIcons.googlePlay,
+                color: Color(0xff78C257),
+                title: 'Play Store',
+                onTap: () {
                   js.context.callMethod('open', [
                     'https://play.google.com/store/apps/details?id=dev.ankan.wuphf_chat'
                   ]);
                 },
-                icon: FaIcon(
-                  FontAwesomeIcons.googlePlay,
-                  size: isMobile ? 20.sp : 18.sp,
-                ),
-                label: Text(
-                  'Play Store',
-                  style: TextStyle(
-                    fontSize: isMobile ? 14.sp : 8.sp,
-                  ),
-                ),
-              ),
-            ],
-          ),
+                isMobile: isMobile),
+          ]),
         ],
       ),
     );
